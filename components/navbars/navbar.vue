@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-light emr">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <nuxt-link tag="a" to="/" class="navbar-brand">Navbar</nuxt-link>
     <button
       class="navbar-toggler"
       type="button"
@@ -21,7 +21,7 @@
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <nuxt-link tag="a" to="/" class="nav-link">Link</nuxt-link>
         </li>
         <li class="nav-item dropdown">
           <a
@@ -36,30 +36,31 @@
             Dropdown
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
+            <nuxt-link tag="a" to="/" class="dropdown-item">Action</nuxt-link>
+            <nuxt-link tag="a" to="/" class="dropdown-item"
+              >Another action</nuxt-link
+            >
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
+            <nuxt-link tag="a" to="/" class="dropdown-item"
+              >Something else here</nuxt-link
+            >
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
+          <nuxt-link tag="a" to="/" class="nav-link disabled"
+            >Disabled</nuxt-link
+          >
         </li>
       </ul>
       <div class="form-inline my-2 my-lg-0">
-        <b-button
-          id="show-btn"
-          @click="$bvModal.show('bv-modal-example')"
-          class="my-2 my-sm-0"
+        <nuxt-link
+          class="my-2 my-sm-0 btn btn-light"
+          tag="button"
           variant="light"
-          v-b-modal.modal-lg
+          to="/login"
         >
-          LOGIN</b-button
+          Login</nuxt-link
         >
-        <b-modal hide-footer id="modal-lg" size="lg">
-          <template #modal-title> Login </template>
-          <login />
-        </b-modal>
       </div>
     </div>
   </nav>
@@ -78,12 +79,18 @@ export default {
   top: 0;
   width: 100%;
   z-index: 100;
-  background-color: #685bb3 !important;
+  background-color: #5bb386 !important;
 }
 .navbar-brand {
   color: white !important;
 }
 .nav-link {
+  color: white !important;
+}
+.navbar-light .navbar-toggler {
+  border: none !important;
+}
+.navbar-toggler {
   color: white !important;
 }
 </style>

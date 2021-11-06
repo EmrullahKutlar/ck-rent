@@ -83,6 +83,11 @@ export default {
 </script>
 <style scoped>
 .emr {
-  margin-top: 50px;
+  margin-top: 56px;
+}
+@media (max-width: 475px) {
+  .emr {
+    margin-top: 50px !important;
+  }
 }
 </style>
