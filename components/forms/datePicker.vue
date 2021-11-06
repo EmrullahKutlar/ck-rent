@@ -1,6 +1,6 @@
 <template>
   <b-form-datepicker
-    id="datepicker-dateformat2"
+    id="datepicker-dateformat3"
     :date-format-options="{ year: 'numeric', month: 'numeric', day: 'numeric' }"
     locale="en"
     :min="min"

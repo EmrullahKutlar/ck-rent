@@ -16,12 +16,13 @@
     <div class="collapse navbar-collapse ml-3" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#"
-            >Home <span class="sr-only">(current)</span></a
-          >
+          <nuxt-link tag="a" to="/" class="nav-link">Rezervasyon</nuxt-link>
         </li>
-        <li class="nav-item">
-          <nuxt-link tag="a" to="/" class="nav-link">Link</nuxt-link>
+        <li class="nav-item active">
+          <nuxt-link tag="a" to="/" class="nav-link">Kampanyalar</nuxt-link>
+        </li>
+        <li class="nav-item active">
+          <nuxt-link tag="a" to="/" class="nav-link">Ofislerimiz</nuxt-link>
         </li>
         <li class="nav-item dropdown">
           <a
@@ -33,18 +34,23 @@
             aria-haspopup="true"
             aria-expanded="false"
           >
-            Dropdown
+            Filo
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <nuxt-link tag="a" to="/" class="dropdown-item">Action</nuxt-link>
-            <nuxt-link tag="a" to="/" class="dropdown-item"
-              >Another action</nuxt-link
-            >
-            <div class="dropdown-divider"></div>
+            <nuxt-link tag="a" to="/" class="dropdown-item">Ekonomik</nuxt-link>
+            <nuxt-link tag="a" to="/" class="dropdown-item">Orta</nuxt-link>
+            <nuxt-link tag="a" to="/" class="dropdown-item">Vip</nuxt-link>
+            <nuxt-link tag="a" to="/" class="dropdown-item">Suv</nuxt-link>
+            <nuxt-link tag="a" to="/" class="dropdown-item">Sport</nuxt-link>
+            <nuxt-link tag="a" to="/" class="dropdown-item">Karavan</nuxt-link>
+            <!-- <div class="dropdown-divider"></div>
             <nuxt-link tag="a" to="/" class="dropdown-item"
               >Something else here</nuxt-link
-            >
+            > -->
           </div>
+        </li>
+        <li class="nav-item active">
+          <nuxt-link tag="a" to="/" class="nav-link">İletişim</nuxt-link>
         </li>
         <li class="nav-item">
           <nuxt-link tag="a" to="/" class="nav-link disabled"
@@ -53,6 +59,19 @@
         </li>
       </ul>
       <div class="form-inline my-2 my-lg-0">
+        <div class="btn-group my-2 my-lg-0 mr-4">
+          <button
+            type="button"
+            class="btn btn-light dropdown-toggle"
+            data-toggle="dropdown"
+            aria-expanded="false"
+          >
+            TR
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item">EN</a>
+          </div>
+        </div>
         <nuxt-link
           class="my-2 my-sm-0 btn btn-light"
           tag="button"

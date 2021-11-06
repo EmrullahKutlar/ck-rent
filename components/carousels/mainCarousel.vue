@@ -3,7 +3,7 @@
     <b-carousel
       id="carousel-1"
       v-model="slide"
-      :interval="4000"
+      :interval="3000"
       controls
       indicators
       background="#ababab"
@@ -14,22 +14,24 @@
       @sliding-end="onSlideEnd"
     >
       <!-- Text slides with image -->
+      <!-- caption="First slide"
+      text="Nulla vitae elit libero, a pharetra augue mollis interdum." 
+      bu kısım b-carousel icine yaziliyor -->
       <b-carousel-slide
-        caption="First slide"
-        text="Nulla vitae elit libero, a pharetra augue mollis interdum."
-        img-src="https://picsum.photos/1024/380/?image=52"
-        ><h1>Hello world1!</h1></b-carousel-slide
-      >
+        img-src="~/assets/carousel/landRover.jpg"
+      ></b-carousel-slide>
+      <b-carousel-slide
+        img-src="~/assets/carousel/toyotaBz4x.jpg"
+      ></b-carousel-slide>
 
       <!-- Slides with custom text -->
-      <b-carousel-slide img-src="https://picsum.photos/1024/380/?image=54">
-        <h1>Hello world2!</h1>
+      <b-carousel-slide img-src="~/assets/carousel/mercedesAmg.jpg">
       </b-carousel-slide>
 
       <!-- Slides with image only -->
-      <b-carousel-slide img-src="https://picsum.photos/1024/380/?image=58"
-        ><h1>Hello world3!</h1></b-carousel-slide
-      >
+      <b-carousel-slide
+        img-src="~/assets/carousel/miniCooper.jpg"
+      ></b-carousel-slide>
 
       <!-- Slides with img slot -->
       <!-- Note the classes .d-block and .img-fluid to prevent browser default image alignment -->
@@ -39,21 +41,20 @@
             class="d-block img-fluid w-100"
             width="1024"
             height="380"
-            src="https://picsum.photos/1024/380/?image=55"
+            src="~/assets/carousel/hyundai20.jpg"
             alt="image slot"
           />
         </template>
-        <h1>Hello world4!</h1>
       </b-carousel-slide>
 
       <!-- Slide with blank fluid image to maintain slide aspect ratio -->
-      <b-carousel-slide caption="Blank Image" img-blank img-alt="Blank image">
+      <!-- <b-carousel-slide caption="Blank Image" img-blank img-alt="Blank image">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
           eros felis, tincidunt a tincidunt eget, convallis vel est. Ut
           pellentesque ut lacus vel interdum.
         </p>
-      </b-carousel-slide>
+      </b-carousel-slide> -->
     </b-carousel>
 
     <p class="mt-4">

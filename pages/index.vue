@@ -1,6 +1,6 @@
 <template>
   <section>
-    <main-coursel />
+    <mainCarousel />
     <div>
       <datePicker />
     </div>
@@ -8,10 +8,10 @@
 </template>
 
 <script>
-import mainCoursel from '~/components/coursels/mainCoursel.vue'
+import mainCarousel from '~/components/carousels/mainCarousel.vue'
 import datePicker from '~/components/forms/datePicker.vue'
 export default {
-  components: { mainCoursel, datePicker },
+  components: { mainCarousel, datePicker },
   layout: 'default',
 }
 </script>

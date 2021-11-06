@@ -7,7 +7,7 @@
             <div class="row g-0">
               <div class="col-md-6 col-lg-5 d-none d-md-block">
                 <img
-                  src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/img1.jpg"
+                  src="~/assets/login/keys.jpg"
                   alt="login form"
                   class="img-fluid"
                   style="border-radius: 1rem 0 0 1rem"
@@ -33,10 +33,8 @@
                         type="email"
                         id="form2Example17"
                         class="form-control form-control-lg"
+                        placeholder="Email address"
                       />
-                      <label class="form-label" for="form2Example17"
-                        >Email address</label
-                      >
                     </div>
 
                     <div class="form-outline mb-4">
@@ -44,25 +42,28 @@
                         type="password"
                         id="form2Example27"
                         class="form-control form-control-lg"
+                        placeholder="Password"
                       />
-                      <label class="form-label" for="form2Example27"
-                        >Password</label
-                      >
                     </div>
 
                     <div class="pt-1 mb-4">
                       <button
-                        class="btn btn-dark btn-lg btn-block"
+                        class="btn btn-success btn-lg btn-block"
                         type="button"
                       >
                         Login
                       </button>
                     </div>
 
-                    <a class="small text-muted" href="#!">Forgot password?</a>
+                    <a
+                      class="small text-muted"
+                      href="#!"
+                      style="color: #e53434 !important"
+                      >Forgot password?</a
+                    >
                     <p class="mb-5 pb-lg-2" style="color: #393f81">
                       Don't have an account?
-                      <a href="#!" style="color: #393f81">Register here</a>
+                      <a href="#!" style="color: #28a745">Register here</a>
                     </p>
                     <a href="#!" class="small text-muted">Terms of use.</a>
                     <a href="#!" class="small text-muted">Privacy policy</a>
