@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="allContent">
     <mainCarousel />
     <div>
       <datePicker />
@@ -15,3 +15,7 @@ export default {
   layout: 'default',
 }
 </script>
+<style>
+.allContent {
+}
+</style>

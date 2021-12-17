@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-light emr">
-    <nuxt-link tag="a" to="/" class="navbar-brand">Navbar</nuxt-link>
+    <nuxt-link tag="a" to="/" class="navbar-brand">CK-Rent</nuxt-link>
     <button
       class="navbar-toggler"
       type="button"
