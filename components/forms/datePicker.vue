@@ -71,7 +71,7 @@
           nav-button-variant="success"
           selected-variant="danger"
           placeholder="Teslim Tarhini Seçiniz"
-          class="datepicker align-items-center"
+          class="datepicker teslim align-items-center"
           v-model="teslim"
           label-help=""
         ></b-form-datepicker>
@@ -163,8 +163,8 @@ export default {
 .b-form-btn-label-control.form-control > .btn {
   color: #dc3545;
 }
-#datepicker-dateformat4 {
-  color: #dc3545;
+.teslim {
+  border: 1px solid #dc3545;
 }
 .was-validated .form-control:valid,
 .form-control.is-valid {
