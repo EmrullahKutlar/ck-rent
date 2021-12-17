@@ -12,10 +12,11 @@
     <div class="row d-flex justify-content-center">
       <div
         class="
-          col-12 col-sm-4 col-md-4 col-lg-4
+          col-12 col-sm-12 col-md-4 col-lg-4
           d-flex
           justify-content-center
           align-items-center
+          mt-3
         "
       >
         <!-- <p style="margin: 0; min-width: 95px">Alış Tarihi:</p> -->
@@ -47,7 +48,12 @@
         ></b-form-datepicker>
       </div>
       <div
-        class="col-12 col-sm-4 col-md-4 col-lg-4 d-flex justify-content-center"
+        class="
+          col-12 col-sm-12 col-md-4 col-lg-4
+          d-flex
+          justify-content-center
+          mt-3
+        "
       >
         <!-- <p style="margin: 0; min-width: 95px">Teslim Tarihini:</p> -->
         <b-form-datepicker
@@ -71,16 +77,21 @@
         ></b-form-datepicker>
       </div>
       <div
-        class="col-12 col-sm-4 col-md-4 col-lg-4 d-flex justify-content-center"
+        class="
+          col-12 col-sm-12 col-md-4 col-lg-4
+          d-flex
+          justify-content-center
+          mt-3
+        "
       >
         <b-form-select v-model="selected" :options="options"></b-form-select>
       </div>
       <div
-        class="col-12 col-sm-4 col-md-4 col-lg-4 d-flex justify-content-center"
+        class="col-12 col-sm-12 col-md-4 col-lg-4 d-flex justify-content-center"
       >
         <b-button
           style="background: #5bb386; width: -webkit-fill-available"
-          class="mt-2"
+          class="mt-3"
           variant="success"
           >Araç Ara</b-button
         >
@@ -159,7 +170,7 @@ export default {
 .form-control.is-valid {
   padding-right: 0 !important;
 }
-@media (min-width: 475px) {
+@media (min-width: 917px) {
   .date-picker {
     position: absolute;
     top: 75%;
