@@ -90,7 +90,7 @@
         class="col-12 col-sm-12 col-md-4 col-lg-4 d-flex justify-content-center"
       >
         <b-button
-          style="background: #5bb386; width: -webkit-fill-available"
+          style="width: -webkit-fill-available"
           class="mt-3"
           variant="success"
           >Araç Ara</b-button
