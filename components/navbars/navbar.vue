@@ -1,5 +1,8 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light emr">
+  <nav
+    variant="success"
+    class="navbar navbar-expand-lg navbar-light bg-light emr"
+  >
     <nuxt-link tag="a" to="/" class="navbar-brand">CK-Rent</nuxt-link>
     <button
       class="navbar-toggler"
@@ -98,7 +101,7 @@ export default {
   top: 0;
   width: 100%;
   z-index: 100;
-  background-color: #5bb386 !important;
+  background-color: #44a55a !important;
 }
 .navbar-brand {
   color: white !important;

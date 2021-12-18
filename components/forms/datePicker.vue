@@ -68,7 +68,7 @@
           locale="tr"
           :min="minTeslimDate"
           :max="maxTeslimDate"
-          nav-button-variant="success"
+          nav-button-variant="danger"
           selected-variant="danger"
           placeholder="Teslim Tarhini Seçiniz"
           class="datepicker teslim align-items-center"

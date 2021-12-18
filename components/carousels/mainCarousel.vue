@@ -1,5 +1,5 @@
 <template>
-  <div class="emr d-flex justify-content-center">
+  <div class="container-fuild emr d-flex justify-content-center">
     <b-carousel
       id="carousel-1"
       v-model="slide"
