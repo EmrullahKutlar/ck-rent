@@ -89,4 +89,8 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.hooper {
+  height: auto !important;
+}
+</style>
