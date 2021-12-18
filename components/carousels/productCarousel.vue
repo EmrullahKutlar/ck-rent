@@ -93,4 +93,7 @@ export default {
 .hooper {
   height: auto !important;
 }
+.hooper-list {
+  height: auto !important;
+}
 </style>
