@@ -7,31 +7,40 @@
         </h2>
       </div>
       <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-        <b-card
-          title="Title"
-          class="text-center"
-          img-src="~/assets/cars/mercedes.png"
-          img-alt="Image"
-          img-top
-        >
+        <b-card class="text-center">
+          <img style="width: 100%" src="~/assets/cars/mercedes.png" />
+          <template #header>
+            <h6 class="mb-0">Seçili Suv Modellerinde %25'e Varan İndirimler</h6>
+          </template>
+          <b-card-text style="font-weight: 600; font-size: 19px"
+            >Alt Baslık</b-card-text
+          >
           <b-card-text>Header and footers using slots.</b-card-text>
           <b-button href="#" variant="success">Go somewhere</b-button>
         </b-card>
       </div>
       <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-        <b-card title="Title" header-tag="header" class="text-center">
+        <b-card class="text-center">
+          <img style="width: 100%" src="~/assets/cars/mercedes.png" />
           <template #header>
-            <h6 class="mb-0">Header Slot</h6>
+            <h6 class="mb-0">Seçili Suv Modellerinde %25'e Varan İndirimler</h6>
           </template>
+          <b-card-text style="font-weight: 600; font-size: 19px"
+            >Alt Baslık</b-card-text
+          >
           <b-card-text>Header and footers using slots.</b-card-text>
           <b-button href="#" variant="success">Go somewhere</b-button>
         </b-card>
       </div>
       <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-        <b-card title="Title" header-tag="header" class="text-center">
+        <b-card class="text-center">
+          <img style="width: 100%" src="~/assets/cars/mercedes.png" />
           <template #header>
-            <h6 class="mb-0">Header Slot</h6>
+            <h6 class="mb-0">Online Ödemelerde %10 İndirim</h6>
           </template>
+          <b-card-text style="font-weight: 600; font-size: 19px"
+            >Alt Baslık</b-card-text
+          >
           <b-card-text>Header and footers using slots.</b-card-text>
           <b-button href="#" variant="success">Go somewhere</b-button>
         </b-card>
@@ -44,4 +53,17 @@
 export default {}
 </script>
 
-<style></style>
+<style scoped>
+.card {
+  border: none !important;
+}
+.card-header {
+  background: inherit;
+  border: none;
+  min-height: 72px;
+}
+.card-header h6 {
+  font-weight: 600;
+  font-size: 20px;
+}
+</style>

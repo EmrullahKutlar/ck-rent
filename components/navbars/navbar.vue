@@ -30,7 +30,7 @@
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle"
-            href="#"
+            href="/"
             id="navbarDropdown"
             role="button"
             data-toggle="dropdown"
@@ -40,12 +40,25 @@
             Filo
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <nuxt-link tag="a" to="/" class="dropdown-item">Ekonomik</nuxt-link>
-            <nuxt-link tag="a" to="/" class="dropdown-item">Orta</nuxt-link>
-            <nuxt-link tag="a" to="/" class="dropdown-item">Vip</nuxt-link>
-            <nuxt-link tag="a" to="/" class="dropdown-item">Suv</nuxt-link>
-            <nuxt-link tag="a" to="/" class="dropdown-item">Sport</nuxt-link>
-            <nuxt-link tag="a" to="/" class="dropdown-item">Karavan</nuxt-link>
+            <nuxt-link tag="a" to="/cars/economic" class="dropdown-item"
+              >Ekonomik</nuxt-link
+            >
+            <nuxt-link tag="a" to="/cars/Orta" class="dropdown-item"
+              >Orta</nuxt-link
+            >
+            <nuxt-link tag="a" to="/cars/Vip" class="dropdown-item"
+              >Vip</nuxt-link
+            >
+            <nuxt-link tag="a" to="/cars/Suv" class="dropdown-item"
+              >Suv</nuxt-link
+            >
+            <nuxt-link tag="a" to="/cars/Sport" class="dropdown-item"
+              >Sport</nuxt-link
+            >
+            <nuxt-link tag="a" to="/cars/Karavan" class="dropdown-item"
+              >Karavan</nuxt-link
+            >
+            <nuxt-link tag="a" to="/cars" class="dropdown-item">Tümü</nuxt-link>
             <!-- <div class="dropdown-divider"></div>
             <nuxt-link tag="a" to="/" class="dropdown-item"
               >Something else here</nuxt-link

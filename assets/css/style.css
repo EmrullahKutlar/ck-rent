@@ -2,3 +2,15 @@
 body {
     font-family: 'Roboto Condensed', sans-serif;
 }
+
+.nav-link-div {
+    align-items: center;
+    width: auto;
+}
+
+.nav-links,
+.nav-links:hover {
+    text-decoration: none;
+    color: #44a55a;
+    margin-right: 10px;
+}
