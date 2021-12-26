@@ -19,7 +19,7 @@
               img-alt="Image"
               img-top
               tag="article"
-              style="max-width: 20rem; text-align: center"
+              style="max-width: 20rem; text-align: center; border-radius: 20px"
               class="mb-2"
             >
               <b-card-text>

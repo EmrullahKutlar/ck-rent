@@ -2,7 +2,7 @@
   <section class="vh-100 emr">
     <div class="container py-5 h-90">
       <div class="row d-flex justify-content-center align-items-center h-90">
-        <div class="col col-xl-10">
+        <div class="col-12">
           <div class="card" style="border-radius: 1rem">
             <div class="row g-0">
               <div class="col-md-6 col-lg-5 d-none d-md-block">
@@ -25,15 +25,16 @@
                     </div>
 
                     <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px">
-                      Sign into your account
+                      Giriş Yap
                     </h5>
 
                     <div class="form-outline mb-4">
                       <input
                         type="email"
                         id="form2Example17"
-                        class="form-control form-control-lg"
-                        placeholder="Email address"
+                        class="form-control"
+                        placeholder="Email"
+                        v-model="user.userName"
                       />
                     </div>
 
@@ -41,8 +42,9 @@
                       <input
                         type="password"
                         id="form2Example27"
-                        class="form-control form-control-lg"
-                        placeholder="Password"
+                        class="form-control"
+                        placeholder="Şifre"
+                        v-model="user.password"
                       />
                     </div>
 
@@ -50,8 +52,9 @@
                       <button
                         class="btn btn-success btn-lg btn-block"
                         type="button"
+                        @click="userLogin"
                       >
-                        Login
+                        Giriş Yap
                       </button>
                     </div>
 
@@ -59,15 +62,129 @@
                       class="small text-muted"
                       href="#!"
                       style="color: #e53434 !important"
-                      >Forgot password?</a
+                      >Şifremi Unuttum</a
                     >
                     <p class="mb-5 pb-lg-2" style="color: #393f81">
-                      Don't have an account?
-                      <a href="#!" style="color: #28a745">Register here</a>
+                      Henüz bir hesabın yok mu?
+                      <button
+                        @click.prevent
+                        class="register-b"
+                        @click="register = !register"
+                      >
+                        Kayıt Ol
+                      </button>
                     </p>
                     <a href="#!" class="small text-muted">Terms of use.</a>
                     <a href="#!" class="small text-muted">Privacy policy</a>
                   </form>
+                  <b-modal
+                    v-model="register"
+                    hide-footer
+                    centered
+                    header-bg-variant="success"
+                    header-text-variant="light"
+                    title="Kayıt Ol"
+                    ><form>
+                      <div class="form-outline mb-4">
+                        <input
+                          type="Name"
+                          class="form-control"
+                          placeholder="İsim Soyisim"
+                        />
+                      </div>
+                      <div class="form-outline mb-4">
+                        <input
+                          type="email"
+                          class="form-control"
+                          placeholder="Email"
+                        />
+                      </div>
+
+                      <div class="form-outline mb-4">
+                        <input
+                          type="password"
+                          class="form-control"
+                          placeholder="Şifre"
+                        />
+                      </div>
+                      <div class="form-outline mb-4">
+                        <input
+                          type="password"
+                          class="form-control"
+                          placeholder="Şifre Tekrar"
+                        />
+                      </div>
+                      <div class="form-outline mb-4">
+                        <b-form-file
+                          v-model="selfie"
+                          placeholder="Selfie Yükleyin"
+                          drop-placeholder="Dosyayı Buraya Sürükleyin"
+                          browse-text="Yükle"
+                          accept="image/*"
+                        ></b-form-file>
+                      </div>
+                      <div class="form-outline mb-4">
+                        <b-form-file
+                          v-model="selfie"
+                          placeholder="Ehliyetinizi Yükleyin"
+                          drop-placeholder="Dosyayı Buraya Sürükleyin"
+                          browse-text="Yükle"
+                          accept="image/*"
+                        ></b-form-file>
+                      </div>
+                      <div class="form-outline mb-2">
+                        <b-form-checkbox
+                          id="checkbox-1"
+                          v-model="status"
+                          name="checkbox-1"
+                          value="accepted"
+                          unchecked-value="not_accepted"
+                        >
+                          <button
+                            class="register-b"
+                            @click.prevent
+                            @click="uyelikSoz = !uyelikSoz"
+                          >
+                            Üyelik Sözleşmesi
+                          </button>
+                          ve
+                          <button
+                            class="register-b"
+                            @click.prevent
+                            @click="gizlikSoz = !gizlikSoz"
+                          >
+                            Gizlilik Politikası</button
+                          >'nı Kabul Ediyorum
+                        </b-form-checkbox>
+                      </div>
+                      <div class="form-outline mb-2">
+                        <button
+                          class="btn btn-success btn-lg btn-block"
+                          type="button"
+                        >
+                          Kayıt Ol
+                        </button>
+                      </div>
+                    </form>
+                  </b-modal>
+                  <b-modal
+                    v-model="uyelikSoz"
+                    hide-footer
+                    centered
+                    header-bg-variant="success"
+                    header-text-variant="light"
+                    title="Üyelik Sözleşmesi"
+                    ><register
+                  /></b-modal>
+                  <b-modal
+                    v-model="gizlikSoz"
+                    hide-footer
+                    centered
+                    header-bg-variant="success"
+                    header-text-variant="light"
+                    title="Gizlilik Sözleşmesi"
+                    ><register
+                  /></b-modal>
                 </div>
               </div>
             </div>
@@ -79,7 +196,31 @@
 </template>
 
 <script>
-export default {}
+import register from '~/components/register/register.vue'
+export default {
+  components: { register },
+  data() {
+    return {
+      user: {
+        userName: '',
+        password: '',
+      },
+      register: false,
+      uyelikSoz: false,
+      gizlikSoz: false,
+    }
+  },
+  methods: {
+    async userLogin() {
+      try {
+        let response = await this.$auth.loginWith('local', { data: this.user })
+        console.log(response)
+      } catch (err) {
+        console.log(err)
+      }
+    },
+  },
+}
 </script>
 
 <style scoped>
@@ -97,4 +238,12 @@ export default {}
     margin: 1rem 0 -4rem;
   }
 }*/
+.register-b {
+  background: unset;
+  border: unset;
+  color: #28a745;
+}
+.bg-success {
+  background-color: #44a55a !important;
+}
 </style>

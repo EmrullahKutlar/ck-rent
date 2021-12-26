@@ -50,7 +50,7 @@ export default {
     css: ['@/assets/css/style.css'],
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-    plugins: [],
+    plugins: ['~/plugins/vuelidate'],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
     components: true,
@@ -64,10 +64,30 @@ export default {
         'bootstrap-vue/nuxt',
         // https://go.nuxtjs.dev/axios
         '@nuxtjs/axios',
+        '@nuxtjs/auth-next',
     ],
 
     // Axios module configuration: https://go.nuxtjs.dev/config-axios
-    axios: {},
+    axios: {
+        baseURL: 'http://ckrent.somee.com/api/',
+    },
+
+    auth: {
+        strategies: {
+            local: {
+                endpoints: {
+                    login: {
+                        url: 'Login',
+                        method: 'get',
+                        //propertyName: 'token',
+                    },
+                    user: false, //{ url: 'api/token/login-user', method: 'get', propertyName: false },
+
+                    logout: false,
+                },
+            },
+        },
+    },
 
     // Build Configuration: https://go.nuxtjs.dev/config-build
     build: {},

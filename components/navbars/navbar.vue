@@ -94,7 +94,7 @@
           variant="light"
           to="/login"
         >
-          Login</nuxt-link
+          Giriş Yap/Kayıt Ol</nuxt-link
         >
       </div>
     </div>
