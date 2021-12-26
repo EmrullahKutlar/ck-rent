@@ -1,3 +1,3 @@
 import Vue from 'vue'
-import Vuelidate from 'vuelidate'
-Vue.use(Vuelidate)
+import SimpleValidator from 'simple-vue-validator'
+Vue.use(SimpleValidator)

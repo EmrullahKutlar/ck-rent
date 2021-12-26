@@ -1,5 +1,5 @@
 <template>
-  <section class="vh-100 emr">
+  <section class="emr">
     <div class="container py-5 h-90">
       <div class="row d-flex justify-content-center align-items-center h-90">
         <div class="col-12">
@@ -29,12 +29,19 @@
                     </h5>
 
                     <div class="form-outline mb-4">
+                      <span
+                        style="font-size: 11px; color: red"
+                        v-if="validation.hasError('user.email')"
+                      >
+                        Bu alan zorunludur
+                      </span>
                       <input
                         type="email"
                         id="form2Example17"
                         class="form-control"
                         placeholder="Email"
-                        v-model="user.userName"
+                        required
+                        v-model="user.email"
                       />
                     </div>
 
@@ -44,6 +51,7 @@
                         id="form2Example27"
                         class="form-control"
                         placeholder="Şifre"
+                        required
                         v-model="user.password"
                       />
                     </div>
@@ -58,12 +66,14 @@
                       </button>
                     </div>
 
-                    <a
-                      class="small text-muted"
-                      href="#!"
+                    <button
+                      class="register-b"
                       style="color: #e53434 !important"
-                      >Şifremi Unuttum</a
+                      @click.prevent
+                      @click="sifremiUnuttum = !sifremiUnuttum"
                     >
+                      Şifremi Unuttum
+                    </button>
                     <p class="mb-5 pb-lg-2" style="color: #393f81">
                       Henüz bir hesabın yok mu?
                       <button
@@ -116,7 +126,6 @@
                       </div>
                       <div class="form-outline mb-4">
                         <b-form-file
-                          v-model="selfie"
                           placeholder="Selfie Yükleyin"
                           drop-placeholder="Dosyayı Buraya Sürükleyin"
                           browse-text="Yükle"
@@ -125,7 +134,6 @@
                       </div>
                       <div class="form-outline mb-4">
                         <b-form-file
-                          v-model="selfie"
                           placeholder="Ehliyetinizi Yükleyin"
                           drop-placeholder="Dosyayı Buraya Sürükleyin"
                           browse-text="Yükle"
@@ -185,6 +193,30 @@
                     title="Gizlilik Sözleşmesi"
                     ><register
                   /></b-modal>
+                  <b-modal
+                    v-model="sifremiUnuttum"
+                    hide-footer
+                    centered
+                    header-bg-variant="success"
+                    header-text-variant="light"
+                    title="Şifremi Unuttum"
+                    ><div class="form-outline mb-4">
+                      Lütfen Email Adresinizi Girin.
+                      <input
+                        type="email"
+                        class="form-control"
+                        placeholder="Email"
+                      />
+                    </div>
+                    <div class="form-outline mb-2">
+                      <button
+                        class="btn btn-success btn-lg btn-block"
+                        type="button"
+                      >
+                        Gönder
+                      </button>
+                    </div>
+                  </b-modal>
                 </div>
               </div>
             </div>
@@ -197,27 +229,38 @@
 
 <script>
 import register from '~/components/register/register.vue'
+import { Validator } from 'simple-vue-validator'
 export default {
   components: { register },
+  validators: {
+    'user.email'(value) {
+      return Validator.value(value).required().email()
+    },
+
+    'user.password'(value) {
+      return Validator.value(value).required()
+    },
+  },
   data() {
     return {
       user: {
-        userName: '',
+        email: '',
         password: '',
       },
       register: false,
       uyelikSoz: false,
       gizlikSoz: false,
+      sifremiUnuttum: false,
+      status: '',
     }
   },
   methods: {
-    async userLogin() {
-      try {
-        let response = await this.$auth.loginWith('local', { data: this.user })
-        console.log(response)
-      } catch (err) {
-        console.log(err)
-      }
+    userLogin() {
+      this.$validate().then(function (success) {
+        if (success) {
+          alert('Validation succeeded!')
+        }
+      })
     },
   },
 }
@@ -225,7 +268,7 @@ export default {
 
 <style scoped>
 .emr {
-  margin: 2.5rem 0 5rem 0;
+  margin: 2.5rem 0 2rem 0;
 }
 .card {
   max-height: 600px !important;
@@ -242,6 +285,7 @@ export default {
   background: unset;
   border: unset;
   color: #28a745;
+  padding: 0;
 }
 .bg-success {
   background-color: #44a55a !important;
