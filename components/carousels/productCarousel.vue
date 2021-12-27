@@ -1,8 +1,10 @@
 <template>
   <div class="container-fuild mt-5 mb-5" style="">
     <div class="">
-      <div class="col-12 text-center mb-2">
-        <h2 style="font-size: 32px; font-weight: 900">Favori Araçlar</h2>
+      <div class="col-12 text-center mb-3">
+        <h2 style="font-size: 32px; font-weight: 900; color: #44a55a">
+          Favori Araçlar
+        </h2>
       </div>
       <div class="">
         <hooper
@@ -19,10 +21,15 @@
               img-alt="Image"
               img-top
               tag="article"
-              style="max-width: 20rem; text-align: center; border-radius: 20px"
+              style="
+                max-width: 20rem;
+                text-align: center;
+                border-radius: 20px;
+                color: #44a55a;
+              "
               class="mb-2"
             >
-              <b-card-text>
+              <b-card-text style="color: #44a55a">
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </b-card-text>

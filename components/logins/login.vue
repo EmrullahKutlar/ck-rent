@@ -29,28 +29,36 @@
                     </h5>
 
                     <div class="form-outline mb-4">
-                      <span
+                      <!-- <span
                         style="font-size: 11px; color: red"
                         v-if="validation.hasError('user.email')"
                       >
-                        Bu alan zorunludur
-                      </span>
+                        Bu alanın doldurulması zorunludur
+                      </span> -->
                       <input
                         type="email"
                         id="form2Example17"
                         class="form-control"
-                        placeholder="Email"
+                        :class="{ error: validation.hasError('user.email') }"
+                        placeholder="Email*"
                         required
                         v-model="user.email"
                       />
                     </div>
 
                     <div class="form-outline mb-4">
+                      <!-- <span
+                        style="font-size: 11px; color: red"
+                        v-if="validation.hasError('user.password')"
+                      >
+                        Bu alanın doldurulması zorunludur
+                      </span> -->
                       <input
+                        :class="{ error: validation.hasError('user.password') }"
                         type="password"
                         id="form2Example27"
                         class="form-control"
-                        placeholder="Şifre"
+                        placeholder="Şifre*"
                         required
                         v-model="user.password"
                       />
@@ -99,14 +107,28 @@
                         <input
                           type="Name"
                           class="form-control"
-                          placeholder="İsim Soyisim"
+                          placeholder="*Ad Soyad"
+                          v-model="newUser.fullName"
+                          :class="{
+                            error: validation.hasError('newUser.fullName'),
+                          }"
                         />
                       </div>
                       <div class="form-outline mb-4">
+                        <span
+                          style="font-size: 11px; color: red"
+                          v-if="validation.hasError('newUser.email')"
+                        >
+                          Geçerli Bir Email Adresi Giriniz...
+                        </span>
                         <input
                           type="email"
                           class="form-control"
-                          placeholder="Email"
+                          placeholder="*Email"
+                          v-model="newUser.email"
+                          :class="{
+                            error: validation.hasError('newUser.email'),
+                          }"
                         />
                       </div>
 
@@ -114,40 +136,68 @@
                         <input
                           type="password"
                           class="form-control"
-                          placeholder="Şifre"
+                          placeholder="*Şifre  (Minimum 8 Karater Giriniz)"
+                          v-model="newUser.password"
+                          :class="{
+                            error: validation.hasError('newUser.password'),
+                          }"
                         />
                       </div>
                       <div class="form-outline mb-4">
+                        <span
+                          style="font-size: 11px; color: red"
+                          v-if="validation.hasError('newUser.rePassword')"
+                        >
+                          Şifreler Uyuşmuyor
+                        </span>
                         <input
                           type="password"
                           class="form-control"
-                          placeholder="Şifre Tekrar"
+                          placeholder="*Şifre Tekrar"
+                          :class="{
+                            error: validation.hasError('newUser.rePassword'),
+                          }"
+                          v-model="newUser.rePassword"
                         />
                       </div>
                       <div class="form-outline mb-4">
                         <b-form-file
-                          placeholder="Selfie Yükleyin"
+                          placeholder="*Selfie Yükleyin"
                           drop-placeholder="Dosyayı Buraya Sürükleyin"
                           browse-text="Yükle"
                           accept="image/*"
+                          v-model="newUser.selfie"
+                          :class="{
+                            error: validation.hasError('newUser.selfie'),
+                          }"
                         ></b-form-file>
                       </div>
                       <div class="form-outline mb-4">
                         <b-form-file
-                          placeholder="Ehliyetinizi Yükleyin"
+                          placeholder="*Ehliyetinizi Yükleyin"
                           drop-placeholder="Dosyayı Buraya Sürükleyin"
                           browse-text="Yükle"
                           accept="image/*"
+                          v-model="newUser.drivingLicence"
+                          :class="{
+                            error: validation.hasError(
+                              'newUser.drivingLicence'
+                            ),
+                          }"
                         ></b-form-file>
                       </div>
                       <div class="form-outline mb-2">
                         <b-form-checkbox
                           id="checkbox-1"
-                          v-model="status"
+                          v-model="newUser.sozlesme"
                           name="checkbox-1"
                           value="accepted"
                           unchecked-value="not_accepted"
+                          :class="{
+                            error: validation.hasError('newUser.sozlesme'),
+                          }"
                         >
+                          *
                           <button
                             class="register-b"
                             @click.prevent
@@ -169,6 +219,7 @@
                         <button
                           class="btn btn-success btn-lg btn-block"
                           type="button"
+                          @click="registerCheck"
                         >
                           Kayıt Ol
                         </button>
@@ -206,7 +257,17 @@
                         type="email"
                         class="form-control"
                         placeholder="Email"
+                        v-model="forgotAccount"
+                        :class="{
+                          error: validation.hasError('forgotAccount'),
+                        }"
                       />
+                      <span
+                        style="font-size: 11px; color: red"
+                        v-if="validation.hasError('forgotAccount')"
+                      >
+                        Lütfen Geçerli Bir Mail Adresi Giriniz
+                      </span>
                     </div>
                     <div class="form-outline mb-2">
                       <button
@@ -236,9 +297,34 @@ export default {
     'user.email'(value) {
       return Validator.value(value).required().email()
     },
-
     'user.password'(value) {
       return Validator.value(value).required()
+    },
+    'newUser.fullName'(value) {
+      return Validator.value(value).required()
+    },
+    'newUser.email'(value) {
+      return Validator.value(value).required().email()
+    },
+    'newUser.password'(value) {
+      return Validator.value(value).required().minLength(8)
+    },
+    'newUser.rePassword, newUser.password': function (RePassword, Password) {
+      if (this.submitted || this.validation.isTouched('newUser.rePassword')) {
+        return Validator.value(RePassword).required().match(Password)
+      }
+    },
+    'newUser.selfie'(value) {
+      return Validator.value(value).required()
+    },
+    'newUser.drivingLicence'(value) {
+      return Validator.value(value).required()
+    },
+    'newUser.sozlesme'(value) {
+      return Validator.value(value).required()
+    },
+    forgotAccount(value) {
+      return Validator.value(value).required().email()
     },
   },
   data() {
@@ -247,6 +333,17 @@ export default {
         email: '',
         password: '',
       },
+      newUser: {
+        fullName: '',
+        email: '',
+        password: '',
+        rePassword: '',
+        selfie: '',
+        drivingLicence: '',
+        sozlesme: '',
+      },
+      forgotAccount: '',
+
       register: false,
       uyelikSoz: false,
       gizlikSoz: false,
@@ -256,6 +353,13 @@ export default {
   },
   methods: {
     userLogin() {
+      this.$validate().then(function (success) {
+        if (success) {
+          alert('Validation succeeded!')
+        }
+      })
+    },
+    registerCheck() {
       this.$validate().then(function (success) {
         if (success) {
           alert('Validation succeeded!')
@@ -289,5 +393,9 @@ export default {
 }
 .bg-success {
   background-color: #44a55a !important;
+}
+.error {
+  border: 1px solid red !important;
+  box-shadow: 0 0 0 0.2rem rgb(255 0 0 / 25%) !important;
 }
 </style>

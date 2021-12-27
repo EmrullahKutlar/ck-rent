@@ -81,11 +81,12 @@
             class="btn btn-light dropdown-toggle"
             data-toggle="dropdown"
             aria-expanded="false"
+            style="color: #44a55a"
           >
             TR
           </button>
           <div class="dropdown-menu">
-            <a class="dropdown-item">EN</a>
+            <a class="dropdown-item" style="color: #44a55a">EN</a>
           </div>
         </div>
         <nuxt-link
@@ -93,6 +94,7 @@
           tag="button"
           variant="light"
           to="/login"
+          style="color: #44a55a"
         >
           Giriş Yap/Kayıt Ol</nuxt-link
         >
