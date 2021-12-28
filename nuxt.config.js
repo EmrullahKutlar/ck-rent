@@ -64,13 +64,17 @@ export default {
         'bootstrap-vue/nuxt',
         // https://go.nuxtjs.dev/axios
         '@nuxtjs/axios',
-        '@nuxtjs/auth-next',
+        '@nuxtjs/auth',
+        '@nuxtjs/toast',
     ],
-
+    toast: {
+        position: 'top-center',
+    },
     // Axios module configuration: https://go.nuxtjs.dev/config-axios
     axios: {
-        baseURL: 'https://ckrent.tk/api/',
+        baseURL: 'https://ckrent.tk/api/Login/',
         headers: { 'Access-Control-Allow-Origin': '*' },
+        changeOrigin: true,
     },
 
     auth: {
@@ -78,8 +82,8 @@ export default {
             local: {
                 endpoints: {
                     login: {
-                        url: 'Login',
-                        method: 'get',
+                        url: 'GetLogin',
+                        method: 'post',
                         //propertyName: 'token',
                     },
                     user: false, //{ url: 'api/token/login-user', method: 'get', propertyName: false },

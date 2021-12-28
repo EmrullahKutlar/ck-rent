@@ -29,37 +29,29 @@
                     </h5>
 
                     <div class="form-outline mb-4">
-                      <!-- <span
-                        style="font-size: 11px; color: red"
-                        v-if="validation.hasError('user.email')"
-                      >
-                        Bu alanın doldurulması zorunludur
-                      </span> -->
                       <input
                         type="email"
                         id="form2Example17"
                         class="form-control"
-                        :class="{ error: validation.hasError('user.email') }"
                         placeholder="Email*"
                         required
+                        :class="{
+                          error: bosForm,
+                        }"
                         v-model="user.email"
                       />
                     </div>
 
                     <div class="form-outline mb-4">
-                      <!-- <span
-                        style="font-size: 11px; color: red"
-                        v-if="validation.hasError('user.password')"
-                      >
-                        Bu alanın doldurulması zorunludur
-                      </span> -->
                       <input
-                        :class="{ error: validation.hasError('user.password') }"
                         type="password"
                         id="form2Example27"
                         class="form-control"
                         placeholder="Şifre*"
                         required
+                        :class="{
+                          error: bosForm,
+                        }"
                         v-model="user.password"
                       />
                     </div>
@@ -258,16 +250,7 @@
                         class="form-control"
                         placeholder="Email"
                         v-model="forgotAccount"
-                        :class="{
-                          error: validation.hasError('forgotAccount'),
-                        }"
                       />
-                      <span
-                        style="font-size: 11px; color: red"
-                        v-if="validation.hasError('forgotAccount')"
-                      >
-                        Lütfen Geçerli Bir Mail Adresi Giriniz
-                      </span>
                     </div>
                     <div class="form-outline mb-2">
                       <button
@@ -294,12 +277,6 @@ import { Validator } from 'simple-vue-validator'
 export default {
   components: { register },
   validators: {
-    'user.email'(value) {
-      return Validator.value(value).required().email()
-    },
-    'user.password'(value) {
-      return Validator.value(value).required()
-    },
     'newUser.fullName'(value) {
       return Validator.value(value).required()
     },
@@ -323,15 +300,12 @@ export default {
     'newUser.sozlesme'(value) {
       return Validator.value(value).required()
     },
-    forgotAccount(value) {
-      return Validator.value(value).required().email()
-    },
   },
   data() {
     return {
       user: {
-        email: '',
-        password: '',
+        email: null,
+        password: null,
       },
       newUser: {
         fullName: '',
@@ -343,7 +317,7 @@ export default {
         sozlesme: '',
       },
       forgotAccount: '',
-
+      bosForm: false,
       register: false,
       uyelikSoz: false,
       gizlikSoz: false,
@@ -354,24 +328,25 @@ export default {
   methods: {
     async Login() {
       console.log('logine geldi')
-      try {
-        let response = await this.$auth.loginWith('local', { data: this.user })
-        console.log(response)
-      } catch (err) {
-        console.log(err)
+      if (this.user.email || this.user.password != null) {
+        this.bosForm = false
+        try {
+          let response = await this.$auth.loginWith('local', {
+            data: this.user,
+          })
+          console.log(response)
+        } catch (err) {
+          console.log(err)
+        }
+      } else {
+        this.bosForm = true
+        this.$toast.error('Lütfen Boş Alanları Doldurunuz').goAway(1500)
       }
     },
-    userLogin() {
-      this.$validate().then(function (success) {
-        console.log('logine yonlendi')
-        Login()
-        if (success) {
-          alert('Validation succeeded!')
-        }
-      })
-    },
+
     registerCheck() {
       this.$validate().then(function (success) {
+        console.log(success)
         if (success) {
           alert('Validation succeeded!')
         }

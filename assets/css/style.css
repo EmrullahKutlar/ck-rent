@@ -14,3 +14,14 @@ body {
     color: #44a55a;
     margin-right: 10px;
 }
+
+.table.b-table.b-table-stacked>tbody>tr>[data-label]::before {}
+
+.table th,
+.table td {
+    padding: 0 !important;
+    vertical-align: top;
+    border-top: none !important;
+    text-align: start;
+    margin-left: 11%;
+}
