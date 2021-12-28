@@ -69,7 +69,8 @@ export default {
 
     // Axios module configuration: https://go.nuxtjs.dev/config-axios
     axios: {
-        baseURL: 'http://ckrent.somee.com/api/',
+        baseURL: 'https://ckrent.tk/api/',
+        headers: { 'Access-Control-Allow-Origin': '*' },
     },
 
     auth: {

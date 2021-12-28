@@ -68,7 +68,7 @@
                       <button
                         class="btn btn-success btn-lg btn-block"
                         type="button"
-                        @click="userLogin"
+                        @click="Login"
                       >
                         Giriş Yap
                       </button>
@@ -352,8 +352,19 @@ export default {
     }
   },
   methods: {
+    async Login() {
+      console.log('logine geldi')
+      try {
+        let response = await this.$auth.loginWith('local', { data: this.user })
+        console.log(response)
+      } catch (err) {
+        console.log(err)
+      }
+    },
     userLogin() {
       this.$validate().then(function (success) {
+        console.log('logine yonlendi')
+        Login()
         if (success) {
           alert('Validation succeeded!')
         }
