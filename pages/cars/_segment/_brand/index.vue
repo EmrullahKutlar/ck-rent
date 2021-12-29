@@ -1,18 +1,44 @@
 <template>
-  <div class="container" style="min-height: 300px; margin-top: 106px">
-    <div class="col-12 col-sm-2 col-md-3 col-lg-3 col-xl-4">
-      <div class="container">
-        <div class="card2">
-          <div class="imgBx">
-            <img src="~/assets/cars/mercedes.png" />
+  <div class="container" style="margin-top: 106px">
+    <div class="row d-flex">
+      <div
+        class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 mb-5"
+        v-for="i in 6"
+        :key="i"
+      >
+        <div class="card pt-2" style="width: auto">
+          <img src="~/assets/cars/mercedes.png" class="card-img-top" alt="" />
+          <div class="card-body">
+            <h5 class="card-title text-center">Card title</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
           </div>
-          <div class="contentBx">
-            <h2>Mercedes</h2>
-            <div class="size">
-              <b-table stacked :items="items"></b-table>
-            </div>
-
-            <a href="#">Hemen Kirala</a>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              Bagaj:
+              <span class="veri">356L</span>
+            </li>
+            <li class="list-group-item">
+              Motor:
+              <span class="veri">1.6 Diesel</span>
+            </li>
+            <li class="list-group-item">
+              Kapı:
+              <span class="veri">4</span>
+            </li>
+            <li class="list-group-item">
+              KM:
+              <span class="veri">1820</span>
+            </li>
+            <li class="list-group-item">
+              Günlük Ücret:
+              <span class="veri">280 TL</span>
+            </li>
+          </ul>
+          <div class="card-body text-center">
+            <a href="#" class="card-link">Hemen Kirala</a>
           </div>
         </div>
       </div>
@@ -31,150 +57,30 @@ export default {
 </script>
 
 <style scoped>
-.container {
-  position: relative;
+.veri {
+  margin-left: 15px;
+  color: #5b5c51;
 }
-
-.container .card2 {
-  position: relative;
-  width: 320px;
-  height: 450px;
-  border-radius: 20px;
-  overflow: hidden;
-}
-
-.container .card2:hover:before {
-  clip-path: circle(300px at 80% -20%);
-}
-
-.container .card2 .imgBx {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1;
-  width: 100%;
-  height: 220px;
-  transition: 0.5s;
-}
-
-.container .card2:hover .imgBx {
-  top: 0%;
-  transform: translateY(0%);
-}
-
-.container .card2 .imgBx img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 270px;
-}
-
-.container .card2 .contentBx {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 100px;
-  text-align: center;
-  transition: 1s;
-  z-index: 10;
-}
-
-.container .card2:hover .contentBx {
-  height: 210px;
-}
-
-.container .card2 .contentBx h2 {
-  position: relative;
-  font-weight: 600;
-  letter-spacing: 1px;
+.list-group-item {
   color: #44a55a;
-  margin: 0;
-}
 
-.container .card2 .contentBx .size {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 8px 27%;
-  transition: 0.5s;
-  opacity: 0;
-  visibility: hidden;
-  padding-top: 0;
-  padding-bottom: 0;
-  margin-top: 0.5rem;
+  padding: 0.1rem 1.25rem;
 }
-
-.container .card2:hover .contentBx .size {
-  opacity: 1;
-  visibility: visible;
-  transition-delay: 0.5s;
+.card-text {
+  color: #5b5c51;
 }
-
-.container .card2:hover .contentBx .color {
-  opacity: 1;
-  visibility: visible;
-  transition-delay: 0.6s;
-}
-
-.container .card2 .contentBx .size h3,
-.container .card2 .contentBx .color h3 {
+.card-link,
+.card-title {
   color: #44a55a;
-  font-weight: 300;
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-right: 10px;
 }
-
-.container .card2 .contentBx .size span {
-  margin: 0 0 0 10px;
-  color: gray;
+.card {
+  border-radius: 50% 50% 0% 0% / 5% 5% 0% 0%;
+  border-color: #e9e7e7;
+  box-shadow: 10px 10px rgba(134, 134, 134, 0.15);
+  transition: all 0.4s ease;
 }
-/*
-.container .card .contentBx .size span:hover {
-  background: #9bdc28;
-}
-
-.container .card .contentBx .color span {
-  width: 20px;
-  height: 20px;
-  background: #ff0;
-  border-radius: 50%;
-  margin: 0 5px;
-  cursor: pointer;
-}
-
-.container .card .contentBx .color span:nth-child(2) {
-  background: #9bdc28;
-}
-
-.container .card .contentBx .color span:nth-child(3) {
-  background: #03a9f4;
-}
-
-.container .card .contentBx .color span:nth-child(4) {
-  background: #e91e63;
-}*/
-
-.container .card2 .contentBx a {
-  display: inline-block;
-  padding: 10px 20px;
-  background: #fff;
-  border-radius: 4px;
-  margin-top: 10px;
-  text-decoration: none;
-  font-weight: 600;
-  color: #44a55a;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: 0.5s;
-  margin-top: 0;
-}
-
-.container .card2:hover .contentBx a {
-  opacity: 1;
-  transform: translateY(0px);
-  transition-delay: 0.75s;
+.card:hover {
+  border-radius: 0% 0% 50% 50% / 0% 0% 5% 5%;
+  box-shadow: 10px 10px rgba(88, 88, 88, 0.25);
 }
 </style>
