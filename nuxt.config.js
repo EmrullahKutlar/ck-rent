@@ -72,7 +72,7 @@ export default {
     },
     // Axios module configuration: https://go.nuxtjs.dev/config-axios
     axios: {
-        baseURL: 'https://ckrent.tk/api/Login/',
+        baseURL: 'https://ckrent.tk/api/',
         headers: { 'Access-Control-Allow-Origin': '*' },
         changeOrigin: true,
     },
@@ -82,7 +82,7 @@ export default {
             local: {
                 endpoints: {
                     login: {
-                        url: 'GetLogin',
+                        url: 'Login/GetLogin',
                         method: 'post',
                         //propertyName: 'token',
                     },

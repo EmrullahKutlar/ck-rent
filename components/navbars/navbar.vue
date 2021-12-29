@@ -40,29 +40,25 @@
             Filo
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <nuxt-link tag="a" to="/cars/economic" class="dropdown-item"
+            <nuxt-link tag="a" to="/cars/ekonomik" class="dropdown-item"
               >Ekonomik</nuxt-link
             >
-            <nuxt-link tag="a" to="/cars/Orta" class="dropdown-item"
+            <nuxt-link tag="a" to="/cars/orta" class="dropdown-item"
               >Orta</nuxt-link
             >
-            <nuxt-link tag="a" to="/cars/Vip" class="dropdown-item"
+            <nuxt-link tag="a" to="/cars/vip" class="dropdown-item"
               >Vip</nuxt-link
             >
-            <nuxt-link tag="a" to="/cars/Suv" class="dropdown-item"
+            <nuxt-link tag="a" to="/cars/suv" class="dropdown-item"
               >Suv</nuxt-link
             >
-            <nuxt-link tag="a" to="/cars/Sport" class="dropdown-item"
+            <nuxt-link tag="a" to="/cars/sport" class="dropdown-item"
               >Sport</nuxt-link
             >
-            <nuxt-link tag="a" to="/cars/Karavan" class="dropdown-item"
+            <nuxt-link tag="a" to="/cars/karavan" class="dropdown-item"
               >Karavan</nuxt-link
             >
             <nuxt-link tag="a" to="/cars" class="dropdown-item">Tümü</nuxt-link>
-            <!-- <div class="dropdown-divider"></div>
-            <nuxt-link tag="a" to="/" class="dropdown-item"
-              >Something else here</nuxt-link
-            > -->
           </div>
         </li>
         <li class="nav-item active">

@@ -42,12 +42,12 @@
       >
         <div class="col-12 car-card">
           <div class="col-12">
-            <nuxt-link to="/cars/ekonomik"
+            <nuxt-link to="/cars/orta"
               ><img style="width: 80%" src="~/assets/cars/mercedes.png"
             /></nuxt-link>
           </div>
           <div class="col-12" style="margin-top: -30px">
-            <nuxt-link to="/cars/ekonomik" class="car-title">Orta</nuxt-link>
+            <nuxt-link to="/cars/orta" class="car-title">Orta</nuxt-link>
           </div>
         </div>
       </div>
@@ -61,12 +61,12 @@
       >
         <div class="col-12 car-card">
           <div class="col-12">
-            <nuxt-link to="/cars/ekonomik"
+            <nuxt-link to="/cars/vip"
               ><img style="width: 80%" src="~/assets/cars/mercedes.png"
             /></nuxt-link>
           </div>
           <div class="col-12" style="margin-top: -30px">
-            <nuxt-link to="/cars/ekonomik" class="car-title">Vip</nuxt-link>
+            <nuxt-link to="/cars/vip" class="car-title">Vip</nuxt-link>
           </div>
         </div>
       </div>
@@ -80,12 +80,12 @@
       >
         <div class="col-12 car-card">
           <div class="col-12">
-            <nuxt-link to="/cars/ekonomik"
+            <nuxt-link to="/cars/suv"
               ><img style="width: 80%" src="~/assets/cars/mercedes.png"
             /></nuxt-link>
           </div>
           <div class="col-12" style="margin-top: -30px">
-            <nuxt-link to="/cars/ekonomik" class="car-title">Suv</nuxt-link>
+            <nuxt-link to="/cars/suv" class="car-title">Suv</nuxt-link>
           </div>
         </div>
       </div>
@@ -99,12 +99,12 @@
       >
         <div class="col-12 car-card">
           <div class="col-12">
-            <nuxt-link to="/cars/ekonomik"
+            <nuxt-link to="/cars/sport"
               ><img style="width: 80%" src="~/assets/cars/mercedes.png"
             /></nuxt-link>
           </div>
           <div class="col-12" style="margin-top: -30px">
-            <nuxt-link to="/cars/ekonomik" class="car-title" style=""
+            <nuxt-link to="/cars/sport" class="car-title" style=""
               >Sport</nuxt-link
             >
           </div>
@@ -120,12 +120,12 @@
       >
         <div class="col-12 car-card">
           <div class="col-12">
-            <nuxt-link to="/cars/ekonomik"
+            <nuxt-link to="/cars/karavan"
               ><img style="width: 80%" src="~/assets/cars/mercedes.png"
             /></nuxt-link>
           </div>
           <div class="col-12" style="margin-top: -30px">
-            <nuxt-link to="/cars/ekonomik" class="car-title" style=""
+            <nuxt-link to="/cars/karavan" class="car-title" style=""
               >Karavan</nuxt-link
             >
           </div>

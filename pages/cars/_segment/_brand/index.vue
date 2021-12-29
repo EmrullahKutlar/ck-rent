@@ -3,42 +3,42 @@
     <div class="row d-flex">
       <div
         class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 mb-5"
-        v-for="i in 6"
-        :key="i"
+        v-for="(item, index) in tbody"
+        :key="index"
       >
         <div class="card pt-2" style="width: auto">
           <img src="~/assets/cars/mercedes.png" class="card-img-top" alt="" />
           <div class="card-body">
-            <h5 class="card-title text-center">Card title</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
+            <h5 class="card-title text-center">{{ item.name }}</h5>
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
               Bagaj:
-              <span class="veri">356L</span>
+              <span class="veri">{{ item.luggage + ' ' }}Büyük Valiz</span>
             </li>
             <li class="list-group-item">
-              Motor:
-              <span class="veri">1.6 Diesel</span>
+              Yakıt:
+              <span class="veri">{{ item.fuel }}</span>
+            </li>
+            <li class="list-group-item">
+              Vites:
+              <span class="veri">{{ item.gear }}</span>
             </li>
             <li class="list-group-item">
               Kapı:
-              <span class="veri">4</span>
-            </li>
-            <li class="list-group-item">
-              KM:
-              <span class="veri">1820</span>
+              <span class="veri">{{ item.doors }}</span>
             </li>
             <li class="list-group-item">
               Günlük Ücret:
-              <span class="veri">280 TL</span>
+              <span class="veri">{{ item.rentFee }} ₺</span>
             </li>
           </ul>
           <div class="card-body text-center">
-            <a href="#" class="card-link">Hemen Kirala</a>
+            <nuxt-link
+              :to="'/cars/' + segment + '/' + brand + '/' + item.id"
+              class="card-link"
+              >Hemen Kirala</nuxt-link
+            >
           </div>
         </div>
       </div>
@@ -49,9 +49,30 @@
 <script>
 export default {
   data() {
-    return {
-      items: [{ Motor: '1.6 Diesel', Kapı: '4', Bagaj: '310 L', Renk: 'Gri' }],
-    }
+    return {}
+  },
+  /*beforeCreate() {
+    console.log(this.route.fullPath)
+  },*/
+  async asyncData({ $axios, params }) {
+    console.log(params)
+    const brand = params.brand
+    const segment = params.segment
+    console.log(brand + '' + segment)
+
+    const response = await $axios.$post(
+      'https://ckrent.tk/api/CarApi/GetBrandCategory',
+
+      {
+        Brand: brand,
+        Category: segment,
+      }
+    )
+    const tbody = response
+    console.log(tbody)
+    if (tbody != null) {
+      return { tbody, segment, brand }
+    } else console.log('bu sayfa bos')
   },
 }
 </script>

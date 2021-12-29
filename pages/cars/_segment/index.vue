@@ -1,7 +1,12 @@
 <template>
   <div class="container mb-3" style="min-height: 300px; margin-top: 75px">
     <div class="col-12">
-      <h2 class="text-center" style="color: #44a55a">Ekonomik</h2>
+      <h2
+        class="text-center"
+        style="color: #44a55a; text-transform: capitalize"
+      >
+        {{ segment }}
+      </h2>
     </div>
     <div class="row">
       <div class="col d-flex nav-link-div">
@@ -9,7 +14,7 @@
         <i class="fas fa-chevron-right nav-links"></i>
         <nuxt-link to="/cars" class="nav-links">Tüm Segmentler</nuxt-link>
         <i class="fas fa-chevron-right nav-links"></i>
-        <div>Ekonomik</div>
+        <div style="text-transform: capitalize">{{ segment }}</div>
       </div>
     </div>
     <div class="row mt-3">
@@ -23,7 +28,7 @@
       >
         <div class="col-12 car-card">
           <div class="col-12">
-            <nuxt-link to="/cars/ekonomik/fiat"
+            <nuxt-link :to="'/cars/' + segment + '/fiat'"
               ><img style="width: 80%" src="~/assets/brands/fiat.jpg"
             /></nuxt-link>
           </div>
@@ -39,7 +44,7 @@
       >
         <div class="col-12 car-card">
           <div class="col-12">
-            <nuxt-link to="/cars/ekonomik/hyundai"
+            <nuxt-link :to="'/cars/' + segment + '/hyundai'"
               ><img style="width: 80%" src="~/assets/brands/hyundai.png"
             /></nuxt-link>
           </div>
@@ -55,7 +60,7 @@
       >
         <div class="col-12 car-card">
           <div class="col-12">
-            <nuxt-link to="/cars/ekonomik/renault"
+            <nuxt-link :to="'/cars/' + segment + '/renault'"
               ><img style="width: 80%" src="~/assets/brands/renault.png"
             /></nuxt-link>
           </div>
@@ -71,7 +76,7 @@
       >
         <div class="col-12 car-card">
           <div class="col-12">
-            <nuxt-link to="/cars/ekonomik/peugeot"
+            <nuxt-link :to="'/cars/' + segment + '/peugeot'"
               ><img style="width: 80%" src="~/assets/brands/peugeot.png"
             /></nuxt-link>
           </div>
@@ -87,8 +92,8 @@
       >
         <div class="col-12 car-card">
           <div class="col-12">
-            <nuxt-link to="/cars/ekonomik"
-              ><img style="width: 80%" src="~/assets/brands/fiat.jpg"
+            <nuxt-link :to="'/cars/' + segment + '/citroen'"
+              ><img style="width: 80%" src="~/assets/brands/citroen.png"
             /></nuxt-link>
           </div>
         </div>
@@ -103,7 +108,7 @@
       >
         <div class="col-12 car-card">
           <div class="col-12">
-            <nuxt-link to="/cars/ekonomik"
+            <nuxt-link :to="'/cars/' + segment + '/fiat'"
               ><img style="width: 80%" src="~/assets/brands/fiat.jpg"
             /></nuxt-link>
           </div>
@@ -114,7 +119,13 @@
 </template>
 
 <script>
-export default {}
+export default {
+  async asyncData({ $axios, params }) {
+    console.log(params)
+    const segment = params.segment
+    return { segment }
+  },
+}
 </script>
 
 <style scoped>
