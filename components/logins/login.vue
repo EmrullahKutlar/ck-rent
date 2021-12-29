@@ -335,12 +335,18 @@ export default {
             data: this.user,
           })
           console.log(response)
+          this.$toast
+            .success('Hoşgeldin' + ' ' + response.data.fullName)
+            .goAway(1500)
+          this.$router.push('/')
         } catch (err) {
-          console.log(err)
+          this.$router.push('/login')
+          this.$toast.error('Email veya Şifre Yanlış').goAway(2000)
         }
       } else {
         this.bosForm = true
-        this.$toast.error('Lütfen Boş Alanları Doldurunuz').goAway(1500)
+        this.$router.push('/login')
+        this.$toast.error('Lütfen Boş Alanları Doldurunuz').goAway(2000)
       }
     },
 

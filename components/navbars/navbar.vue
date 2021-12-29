@@ -95,9 +95,19 @@
           variant="light"
           to="/login"
           style="color: #44a55a"
+          v-if="!this.$store.state.auth.loggedIn"
         >
           Giriş Yap/Kayıt Ol</nuxt-link
         >
+        <button
+          class="my-2 my-sm-0 btn btn-light"
+          variant="light"
+          style="color: #44a55a"
+          v-if="this.$store.state.auth.loggedIn"
+          @click="logout"
+        >
+          Çıkış
+        </button>
       </div>
     </div>
   </nav>
@@ -107,6 +117,11 @@
 import login from '../logins/login.vue'
 export default {
   components: { login },
+  methods: {
+    async logout() {
+      await this.$auth.logout()
+    },
+  },
 }
 </script>
 
