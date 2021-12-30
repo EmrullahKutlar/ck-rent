@@ -220,7 +220,10 @@
                 <div class="col-12">
                   <button class="btn btn-success btn-lg btn-block">
                     Ödemeyi Tamamla</button
-                  ><button class="btn btn-danger btn-lg btn-block">
+                  ><button
+                    class="btn btn-danger btn-lg btn-block"
+                    @click="goHome"
+                  >
                     İptal Et
                   </button>
                 </div>
@@ -297,6 +300,9 @@ export default {
 
       this.ip = ip
       this.payment = true
+    },
+    goHome() {
+      this.$router.push('/')
     },
     hesapla() {
       var teslim = (this.teslim = new Date(this.teslim))
