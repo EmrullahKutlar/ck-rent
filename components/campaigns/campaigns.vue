@@ -20,8 +20,10 @@
           <b-card-text style="font-weight: 600; font-size: 19px; color: #44a55a"
             >Alt Baslık</b-card-text
           >
-          <b-card-text style="color: #44a55a">Yazilar.</b-card-text>
-          <b-button href="#" variant="success"> Görüntüle</b-button>
+          <b-card-text style="color: #44a55a"
+            >Header and footers using slots.</b-card-text
+          >
+          <b-button href="#" variant="success">Go somewhere</b-button>
         </b-card>
       </div>
       <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
@@ -35,8 +37,10 @@
           <b-card-text style="font-weight: 600; font-size: 19px; color: #44a55a"
             >Alt Baslık</b-card-text
           >
-          <b-card-text style="color: #44a55a">Yazilar</b-card-text>
-          <b-button href="#" variant="success"> Görüntüle</b-button>
+          <b-card-text style="color: #44a55a"
+            >Header and footers using slots.</b-card-text
+          >
+          <b-button href="#" variant="success">Go somewhere</b-button>
         </b-card>
       </div>
       <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
@@ -50,8 +54,10 @@
           <b-card-text style="font-weight: 600; font-size: 19px; color: #44a55a"
             >Alt Baslık</b-card-text
           >
-          <b-card-text style="color: #44a55a">Yazilar</b-card-text>
-          <b-button href="#" variant="success"> Görüntüle</b-button>
+          <b-card-text style="color: #44a55a"
+            >Header and footers using slots.</b-card-text
+          >
+          <b-button href="#" variant="success">Go somewhere</b-button>
         </b-card>
       </div>
     </div>
