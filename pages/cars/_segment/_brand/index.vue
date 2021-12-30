@@ -1,13 +1,17 @@
 <template>
   <div class="container" style="margin-top: 106px">
-    <div class="row d-flex">
+    <div class="row d-flex" v-if="tbody">
       <div
         class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 mb-5"
         v-for="(item, index) in tbody"
         :key="index"
       >
         <div class="card pt-2" style="width: auto">
-          <img src="~/assets/cars/mercedes.png" class="card-img-top" alt="" />
+          <img
+            :src="require('~/assets/cars/' + item.carsImagePath)"
+            class="card-img-top"
+            alt=""
+          />
           <div class="card-body">
             <h5 class="card-title text-center">{{ item.name }}</h5>
           </div>
@@ -43,6 +47,11 @@
         </div>
       </div>
     </div>
+    <div class="row" style="min-height: 300px" v-if="bos">
+      <div class="col-12 text-center" style="font-size: 25px; color: #44a55a">
+        {{ bos }}
+      </div>
+    </div>
   </div>
 </template>
 
@@ -51,14 +60,10 @@ export default {
   data() {
     return {}
   },
-  /*beforeCreate() {
-    console.log(this.route.fullPath)
-  },*/
+
   async asyncData({ $axios, params }) {
-    console.log(params)
     const brand = params.brand
     const segment = params.segment
-    console.log(brand + '' + segment)
 
     const response = await $axios.$post(
       'https://ckrent.tk/api/CarApi/GetBrandCategory',
@@ -69,10 +74,15 @@ export default {
       }
     )
     const tbody = response
+    console.log(response)
     console.log(tbody)
-    if (tbody != null) {
+    if (tbody.length != 0) {
       return { tbody, segment, brand }
-    } else console.log('bu sayfa bos')
+    } else {
+      var bos = 'Bu Segment İçin Yeni Araçlarımız Gelecek...'
+      console.log(bos)
+    }
+    return { bos }
   },
 }
 </script>
