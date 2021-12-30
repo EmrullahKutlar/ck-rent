@@ -1,7 +1,7 @@
 <template>
   <div class="container-fuild" style="margin-top: 56px">
-    <div class="row d-flex" style="margin: 0 !important" v-if="!payment">
-      <div class="col-12 col-sm-12 col-md-6 col-lg-6 carSlider">
+    <div class="row d-flex mb-5" style="margin: 0 !important" v-if="!payment">
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6 carSlider mb-5">
         <b-carousel
           id="carousel-1"
           v-model="slide"
@@ -20,34 +20,8 @@
       text="Nulla vitae elit libero, a pharetra augue mollis interdum." 
       bu kısım b-carousel icine yaziliyor -->
           <b-carousel-slide
-            img-src="~/assets/carousel/landRover.jpg"
+            :img-src="require('~/assets/cars/' + tbody.carsImagePath)"
           ></b-carousel-slide>
-          <b-carousel-slide
-            img-src="~/assets/carousel/toyotaBz4x.jpg"
-          ></b-carousel-slide>
-
-          <!-- Slides with custom text -->
-          <b-carousel-slide img-src="~/assets/carousel/mercedesAmg.jpg">
-          </b-carousel-slide>
-
-          <!-- Slides with image only -->
-          <b-carousel-slide
-            img-src="~/assets/carousel/miniCooper.jpg"
-          ></b-carousel-slide>
-
-          <!-- Slides with img slot -->
-          <!-- Note the classes .d-block and .img-fluid to prevent browser default image alignment -->
-          <b-carousel-slide>
-            <template #img>
-              <img
-                class="d-block img-fluid w-100"
-                width="1024"
-                height="380"
-                src="~/assets/carousel/hyundai20.jpg"
-                alt="image slot"
-              />
-            </template>
-          </b-carousel-slide>
 
           <!-- Slide with blank fluid image to maintain slide aspect ratio -->
           <!-- <b-carousel-slide caption="Blank Image" img-blank img-alt="Blank image">
@@ -59,7 +33,7 @@
       </b-carousel-slide> -->
         </b-carousel>
       </div>
-      <div class="col-12 col-sm-12 col-md-6 col-lg-6 mt-3">
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6 mt-3 mb-5">
         <div class="car-title">{{ tbody.name }}</div>
         <div class="properties properties-borders mt-4">
           <div class="properties-item">
@@ -163,10 +137,7 @@
             ></b-form-datepicker>
           </div>
         </div>
-        <div>
-          <button @click="hesapla">hesapla</button>
-          {{ toplamGun }}
-        </div>
+
         <div class="col-12 d-flex justify-content-center mt-4">
           <b-button href="#" variant="success" @click="fi()"
             >Go somewhere</b-button
@@ -182,7 +153,7 @@
               <div class="row d-flex justify-content-center">
                 <h3 class="text-center">ÖDENECEK TUTAR</h3>
                 <div class="col-12 text-center">
-                  <h4>{{ toplamGun * 200 }}₺</h4>
+                  <h4>{{ toplamGun * tbody.rentFee }}₺</h4>
                 </div>
               </div>
             </div>
@@ -318,6 +289,7 @@ export default {
     },
 
     async fi() {
+      this.hesapla()
       const ip = await this.$axios.$post('/CarApi/GetBrandCategory', {
         Brand: 'Citroen',
         Category: 'Ekonomik',

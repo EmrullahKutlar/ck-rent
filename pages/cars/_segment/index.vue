@@ -28,8 +28,8 @@
       >
         <div class="col-12 car-card">
           <div class="col-12">
-            <nuxt-link :to="'/cars/' + segment + '/fiat'"
-              ><img style="width: 80%" src="~/assets/brands/fiat.jpg"
+            <nuxt-link :to="'/cars/' + segment + '/mercedes'"
+              ><img style="width: 80%" src="~/assets/brands/mercedes.png"
             /></nuxt-link>
           </div>
         </div>
@@ -44,8 +44,8 @@
       >
         <div class="col-12 car-card">
           <div class="col-12">
-            <nuxt-link :to="'/cars/' + segment + '/hyundai'"
-              ><img style="width: 80%" src="~/assets/brands/hyundai.png"
+            <nuxt-link :to="'/cars/' + segment + '/jeep'"
+              ><img style="width: 80%" src="~/assets/brands/jeep.png"
             /></nuxt-link>
           </div>
         </div>
@@ -108,8 +108,8 @@
       >
         <div class="col-12 car-card">
           <div class="col-12">
-            <nuxt-link :to="'/cars/' + segment + '/fiat'"
-              ><img style="width: 80%" src="~/assets/brands/fiat.jpg"
+            <nuxt-link :to="'/cars/' + segment + '/crawler'"
+              ><img style="width: 80%" src="~/assets/brands/crawler.jpg"
             /></nuxt-link>
           </div>
         </div>
