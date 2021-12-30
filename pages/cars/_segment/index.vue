@@ -121,7 +121,6 @@
 <script>
 export default {
   async asyncData({ $axios, params }) {
-    console.log(params)
     const segment = params.segment
     return { segment }
   },

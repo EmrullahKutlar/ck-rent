@@ -51,14 +51,10 @@ export default {
   data() {
     return {}
   },
-  /*beforeCreate() {
-    console.log(this.route.fullPath)
-  },*/
+
   async asyncData({ $axios, params }) {
-    console.log(params)
     const brand = params.brand
     const segment = params.segment
-    console.log(brand + '' + segment)
 
     const response = await $axios.$post(
       'https://ckrent.tk/api/CarApi/GetBrandCategory',
@@ -69,10 +65,9 @@ export default {
       }
     )
     const tbody = response
-    console.log(tbody)
     if (tbody != null) {
       return { tbody, segment, brand }
-    } else console.log('bu sayfa bos')
+    }
   },
 }
 </script>

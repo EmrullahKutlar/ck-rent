@@ -295,12 +295,9 @@ export default {
     }
   },
   async asyncData({ $axios, params }) {
-    console.log(params)
     const brand = params.brand
     const segment = params.segment
     const model = params.model
-
-    console.log(brand + '' + segment)
 
     const response = await $axios.$get(
       `https://ckrent.tk/api/CarApi/GetByCar/(id)?id=${model}`
@@ -308,10 +305,9 @@ export default {
 
     var tbody = response
 
-    console.log(tbody)
     if (tbody != null) {
       return { tbody }
-    } else console.log('bu sayfa bos')
+    }
   },
   methods: {
     onSlideStart(slide) {
@@ -328,7 +324,6 @@ export default {
       })
 
       this.ip = ip
-      console.log(ip)
       this.payment = true
     },
     hesapla() {

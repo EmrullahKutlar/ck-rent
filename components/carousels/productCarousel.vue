@@ -14,9 +14,9 @@
         >
           <hooper-navigation slot="hooper-addons"></hooper-navigation>
 
-          <slide v-for="i in 10" :key="i">
+          <slide v-for="(item, index) in tbody" :key="index">
             <b-card
-              title="Card Title"
+              :title="item.name"
               img-src="~/assets/cars/mercedes.png"
               img-alt="Image"
               img-top
@@ -29,17 +29,6 @@
               "
               class="mb-2"
             >
-              <b-card-text style="color: #44a55a">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </b-card-text>
-
-              <b-button
-                style="display: flex; justify-content: center"
-                href="#"
-                variant="success"
-                >Go somewhere</b-button
-              >
             </b-card>
           </slide>
         </hooper>
@@ -51,6 +40,7 @@
 <script>
 import { Hooper, Slide, Navigation as HooperNavigation } from 'hooper'
 import 'hooper/dist/hooper.css'
+import axios from 'axios'
 
 export default {
   components: {
@@ -91,7 +81,18 @@ export default {
           },
         },
       },
+      tbody: [],
     }
+  },
+  beforeCreate() {
+    axios
+      .get('https://ckrent.tk/api/CarApi')
+      .then((response) => {
+        this.tbody = response.data
+      })
+      .catch((error) => {
+        alert(error)
+      })
   },
 }
 </script>
