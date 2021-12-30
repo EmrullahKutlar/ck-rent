@@ -17,7 +17,7 @@
           <slide v-for="(item, index) in tbody" :key="index">
             <b-card
               :title="item.name"
-              :img-src="require('~/assets/cars/' + item.carsImagePath)"
+              img-src="~/assets/cars/mercedes.png"
               img-alt="Image"
               img-top
               tag="article"
@@ -103,9 +103,5 @@ export default {
 }
 .hooper-list {
   height: auto !important;
-}
-.hooper-slide .card img {
-  min-width: 318px;
-  min-height: 267px;
 }
 </style>

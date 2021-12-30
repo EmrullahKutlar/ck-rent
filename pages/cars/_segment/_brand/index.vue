@@ -7,11 +7,7 @@
         :key="index"
       >
         <div class="card pt-2" style="width: auto">
-          <img
-            :src="require('~/assets/cars/' + item.carsImagePath)"
-            class="card-img-top"
-            alt=""
-          />
+          <img src="~/assets/cars/mercedes.png" class="card-img-top" alt="" />
           <div class="card-body">
             <h5 class="card-title text-center">{{ item.name }}</h5>
           </div>
