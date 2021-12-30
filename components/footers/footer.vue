@@ -50,23 +50,28 @@
             <!-- Grid column -->
             <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
               <!-- Content -->
-              <h6 class="text-uppercase fw-bold">CK-Rent</h6>
+              <h6 class="text-uppercase fw-bold">Company name</h6>
               <hr
                 class="mb-4 mt-0 d-inline-block mx-auto"
                 style="width: 60px; background-color: #fff; height: 2px"
               />
+              <p>
+                Here you can use rows and columns to organize your footer
+                content. Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit.
+              </p>
             </div>
             <!-- Grid column -->
 
             <!-- Grid column -->
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
               <!-- Links -->
-              <h6 class="text-uppercase fw-bold">Araçlar</h6>
+              <h6 class="text-uppercase fw-bold">Products</h6>
               <hr
                 class="mb-4 mt-0 d-inline-block mx-auto"
                 style="width: 60px; background-color: #fff; height: 2px"
               />
-              <!-- <p>
+              <p>
                 <a href="#!" class="text-white">MDBootstrap</a>
               </p>
               <p>
@@ -77,19 +82,19 @@
               </p>
               <p>
                 <a href="#!" class="text-white">Bootstrap Angular</a>
-              </p> -->
+              </p>
             </div>
             <!-- Grid column -->
 
             <!-- Grid column -->
             <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
               <!-- Links -->
-              <h6 class="text-uppercase fw-bold">Yararlı Linkler</h6>
+              <h6 class="text-uppercase fw-bold">Useful links</h6>
               <hr
                 class="mb-4 mt-0 d-inline-block mx-auto"
                 style="width: 60px; background-color: #fff; height: 2px"
               />
-              <!-- <p>
+              <p>
                 <a href="#!" class="text-white">Your Account</a>
               </p>
               <p>
@@ -100,14 +105,14 @@
               </p>
               <p>
                 <a href="#!" class="text-white">Help</a>
-              </p> -->
+              </p>
             </div>
             <!-- Grid column -->
 
             <!-- Grid column -->
             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
               <!-- Links -->
-              <h6 class="text-uppercase fw-bold">İletişim</h6>
+              <h6 class="text-uppercase fw-bold">Contact</h6>
               <hr
                 class="mb-4 mt-0 d-inline-block mx-auto"
                 style="width: 60px; background-color: #fff; height: 2px"
@@ -127,7 +132,9 @@
       <!-- Copyright -->
       <div class="text-center p-3" style="background-color: rgb(13 165 87)">
         © 2020 Copyright:
-        <a class="text-white" href="https://mdbootstrap.com/">Ck-Rent.com</a>
+        <a class="text-white" href="https://mdbootstrap.com/"
+          >MDBootstrap.com</a
+        >
       </div>
       <!-- Copyright -->
     </footer>
