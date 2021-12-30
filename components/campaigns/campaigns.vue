@@ -18,7 +18,7 @@
             </h6>
           </template>
           <b-card-text style="font-weight: 600; font-size: 19px; color: #44a55a"
-            >Alt Baslık</b-card-text
+            >Alt Baslık2</b-card-text
           >
           <b-card-text style="color: #44a55a"
             >Header and footers using slots.</b-card-text
