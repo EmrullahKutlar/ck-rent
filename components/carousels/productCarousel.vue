@@ -104,8 +104,4 @@ export default {
 .hooper-list {
   height: auto !important;
 }
-.hooper-slide .card img {
-  min-width: 318px;
-  min-height: 267px;
-}
 </style>
