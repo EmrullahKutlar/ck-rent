@@ -19,13 +19,19 @@
     <div class="collapse navbar-collapse ml-3" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <nuxt-link tag="a" to="/" class="nav-link">Rezervasyon</nuxt-link>
+          <nuxt-link tag="a" to="/rezervasyon" class="nav-link"
+            >Rezervasyon</nuxt-link
+          >
         </li>
         <li class="nav-item active">
-          <nuxt-link tag="a" to="/" class="nav-link">Kampanyalar</nuxt-link>
+          <nuxt-link tag="a" to="/kampanyalar" class="nav-link"
+            >Kampanyalar</nuxt-link
+          >
         </li>
         <li class="nav-item active">
-          <nuxt-link tag="a" to="/" class="nav-link">Ofislerimiz</nuxt-link>
+          <nuxt-link tag="a" to="/ofislerimiz" class="nav-link"
+            >Ofislerimiz</nuxt-link
+          >
         </li>
         <li class="nav-item dropdown">
           <a
@@ -62,11 +68,8 @@
           </div>
         </li>
         <li class="nav-item active">
-          <nuxt-link tag="a" to="/" class="nav-link">İletişim</nuxt-link>
-        </li>
-        <li class="nav-item">
-          <nuxt-link tag="a" to="/" class="nav-link disabled"
-            >Disabled</nuxt-link
+          <nuxt-link tag="a" to="/iletisim" class="nav-link"
+            >İletişim</nuxt-link
           >
         </li>
       </ul>
