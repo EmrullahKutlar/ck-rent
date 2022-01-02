@@ -22,7 +22,7 @@
         <div class="col-12 car-card">
           <div class="col-12">
             <nuxt-link to="/cars/ekonomik"
-              ><img style="width: 80%" src="~/assets/cars/mercedes.png"
+              ><img style="width: 80%" src="~/assets/cars/b-renault-clio.png"
             /></nuxt-link>
           </div>
           <div class="col-12" style="margin-top: -30px">
@@ -43,7 +43,7 @@
         <div class="col-12 car-card">
           <div class="col-12">
             <nuxt-link to="/cars/orta"
-              ><img style="width: 80%" src="~/assets/cars/mercedes.png"
+              ><img style="width: 80%" src="~/assets/cars/renaultmegane1.png"
             /></nuxt-link>
           </div>
           <div class="col-12" style="margin-top: -30px">
@@ -62,7 +62,7 @@
         <div class="col-12 car-card">
           <div class="col-12">
             <nuxt-link to="/cars/vip"
-              ><img style="width: 80%" src="~/assets/cars/mercedes.png"
+              ><img style="width: 80%" src="~/assets/cars/mercedesE200.png"
             /></nuxt-link>
           </div>
           <div class="col-12" style="margin-top: -30px">
@@ -81,7 +81,7 @@
         <div class="col-12 car-card">
           <div class="col-12">
             <nuxt-link to="/cars/suv"
-              ><img style="width: 80%" src="~/assets/cars/mercedes.png"
+              ><img style="width: 80%" src="~/assets/cars/JeepRenegade.png"
             /></nuxt-link>
           </div>
           <div class="col-12" style="margin-top: -30px">
@@ -100,7 +100,7 @@
         <div class="col-12 car-card">
           <div class="col-12">
             <nuxt-link to="/cars/sport"
-              ><img style="width: 80%" src="~/assets/cars/mercedes.png"
+              ><img style="width: 80%" src="~/assets/cars/o-honda-civic.png"
             /></nuxt-link>
           </div>
           <div class="col-12" style="margin-top: -30px">
@@ -121,7 +121,7 @@
         <div class="col-12 car-card">
           <div class="col-12">
             <nuxt-link to="/cars/karavan"
-              ><img style="width: 80%" src="~/assets/cars/mercedes.png"
+              ><img style="width: 80%" src="~/assets/cars/crowler-karavan.png"
             /></nuxt-link>
           </div>
           <div class="col-12" style="margin-top: -30px">
