@@ -84,8 +84,6 @@
                         Kayıt Ol
                       </button>
                     </p>
-                    <a href="#!" class="small text-muted">Terms of use.</a>
-                    <a href="#!" class="small text-muted">Privacy policy</a>
                   </form>
                   <b-modal
                     v-model="register"

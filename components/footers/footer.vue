@@ -13,7 +13,7 @@
       >
         <!-- Left -->
         <div class="me-5">
-          <span>Get connected with us on social networks:</span>
+          <span>Bizimle Sosyal Medyadan İletişime Geçin:</span>
         </div>
         <!-- Left -->
 
