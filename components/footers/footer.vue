@@ -66,18 +66,26 @@
                 class="mb-4 mt-0 d-inline-block mx-auto"
                 style="width: 60px; background-color: #fff; height: 2px"
               />
-              <!-- <p>
-                <a href="#!" class="text-white">MDBootstrap</a>
+              <p>
+                <nuxt-link to="/cars/ekonomik/renault/30" class="text-white">
+                  Renault Symbol
+                </nuxt-link>
               </p>
               <p>
-                <a href="#!" class="text-white">MDWordPress</a>
+                <nuxt-link to="/cars/ekonomik/peugeot/28" class="text-white">
+                  Peugeot 301
+                </nuxt-link>
               </p>
               <p>
-                <a href="#!" class="text-white">BrandFlow</a>
+                <nuxt-link to="/cars/vip/mercedes/8" class="text-white">
+                  Mercedes E200
+                </nuxt-link>
               </p>
               <p>
-                <a href="#!" class="text-white">Bootstrap Angular</a>
-              </p> -->
+                <nuxt-link to="/cars/suv/jeep/14" class="text-white">
+                  Jeep Renegade T Sport
+                </nuxt-link>
+              </p>
             </div>
             <!-- Grid column -->
 
@@ -89,18 +97,21 @@
                 class="mb-4 mt-0 d-inline-block mx-auto"
                 style="width: 60px; background-color: #fff; height: 2px"
               />
-              <!-- <p>
-                <a href="#!" class="text-white">Your Account</a>
+              <p>
+                <nuxt-link to="/rezervasyon" class="text-white">
+                  Rezarvasyon
+                </nuxt-link>
               </p>
               <p>
-                <a href="#!" class="text-white">Become an Affiliate</a>
+                <nuxt-link to="/kampanyalar" class="text-white">
+                  Kampanyalar
+                </nuxt-link>
               </p>
               <p>
-                <a href="#!" class="text-white">Shipping Rates</a>
+                <nuxt-link to="/iletisim" class="text-white">
+                  İletisim
+                </nuxt-link>
               </p>
-              <p>
-                <a href="#!" class="text-white">Help</a>
-              </p> -->
             </div>
             <!-- Grid column -->
 
