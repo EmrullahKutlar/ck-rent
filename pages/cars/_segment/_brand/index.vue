@@ -74,13 +74,10 @@ export default {
       }
     )
     const tbody = response
-    console.log(response)
-    console.log(tbody)
     if (tbody.length != 0) {
       return { tbody, segment, brand }
     } else {
       var bos = 'Bu Segment İçin Yeni Araçlarımız Gelecek...'
-      console.log(bos)
     }
     return { bos }
   },

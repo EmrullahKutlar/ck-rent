@@ -325,14 +325,12 @@ export default {
   },
   methods: {
     async Login() {
-      console.log('logine geldi')
       if (this.user.email || this.user.password != null) {
         this.bosForm = false
         try {
           let response = await this.$auth.loginWith('local', {
             data: this.user,
           })
-          console.log(response)
           this.$toast
             .success('Hoşgeldin' + ' ' + response.data.fullName)
             .goAway(1500)
@@ -350,9 +348,7 @@ export default {
 
     registerCheck() {
       this.$validate().then(function (success) {
-        console.log(success)
         if (success) {
-          alert('Validation succeeded!')
         }
       })
     },
