@@ -112,6 +112,6 @@ export default {
 }
 .card:hover {
   border-radius: 0% 0% 50% 50% / 0% 0% 5% 5%;
-  box-shadow: 10px 10px rgba(88, 88, 88, 0.25);
+  box-shadow: 10px 10px #85dd99;
 }
 </style>
