@@ -53,6 +53,7 @@ export default {
     plugins: [
         { src: '@/plugins/vuelidate', ssr: true },
         { src: '@/plugins/axios', ssr: true },
+        '~/plugins/i18n.js',
     ],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
@@ -68,7 +69,17 @@ export default {
         // https://go.nuxtjs.dev/axios
         '@nuxtjs/axios',
         '@nuxtjs/auth',
-        '@nuxtjs/toast',
+        '@nuxtjs/toast', [
+            '@nuxtjs/i18n',
+            {
+                strategy: 'prefix_except_default',
+                defaultLocale: 'tr',
+                locales: [
+                    'en',
+                    'tr', // Make sure that default locale is the last one!
+                ],
+            },
+        ],
     ],
     toast: {
         position: 'top-center',
@@ -95,6 +106,24 @@ export default {
                 },
             },
         },
+    },
+    i18n: {
+        locales: [{
+                name: 'English',
+                code: 'en',
+                file: 'en-US.json',
+            },
+
+            {
+                name: 'Türkçe',
+                code: 'tr',
+                file: 'tr-TR.json',
+            },
+        ],
+        defaultLocale: 'tr',
+        lazy: true,
+        langDir: 'lang/',
+        strategy: 'prefix_and_default',
     },
 
     // Build Configuration: https://go.nuxtjs.dev/config-build

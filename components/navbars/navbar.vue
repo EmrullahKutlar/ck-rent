@@ -19,19 +19,19 @@
     <div class="collapse navbar-collapse ml-3" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <nuxt-link tag="a" to="/rezervasyon" class="nav-link"
-            >Rezervasyon</nuxt-link
-          >
+          <nuxt-link tag="a" to="/rezervasyon" class="nav-link">{{
+            $t('Reservation')
+          }}</nuxt-link>
         </li>
         <li class="nav-item active">
-          <nuxt-link tag="a" to="/kampanyalar" class="nav-link"
-            >Kampanyalar</nuxt-link
-          >
+          <nuxt-link tag="a" to="/kampanyalar" class="nav-link">{{
+            $t('Campaigns')
+          }}</nuxt-link>
         </li>
         <li class="nav-item active">
-          <nuxt-link tag="a" to="/ofislerimiz" class="nav-link"
-            >Ofislerimiz</nuxt-link
-          >
+          <nuxt-link tag="a" to="/ofislerimiz" class="nav-link">{{
+            $t('Ouroffices')
+          }}</nuxt-link>
         </li>
         <li class="nav-item dropdown">
           <a
@@ -46,12 +46,12 @@
             Filo
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <nuxt-link tag="a" to="/cars/ekonomik" class="dropdown-item"
-              >Ekonomik</nuxt-link
-            >
-            <nuxt-link tag="a" to="/cars/orta" class="dropdown-item"
-              >Orta</nuxt-link
-            >
+            <nuxt-link tag="a" to="/cars/ekonomik" class="dropdown-item">{{
+              $t('Economic')
+            }}</nuxt-link>
+            <nuxt-link tag="a" to="/cars/orta" class="dropdown-item">{{
+              $t('MiddleSegment')
+            }}</nuxt-link>
             <nuxt-link tag="a" to="/cars/vip" class="dropdown-item"
               >Vip</nuxt-link
             >
@@ -61,16 +61,16 @@
             <nuxt-link tag="a" to="/cars/sport" class="dropdown-item"
               >Sport</nuxt-link
             >
-            <nuxt-link tag="a" to="/cars/karavan" class="dropdown-item"
-              >Karavan</nuxt-link
-            >
+            <nuxt-link tag="a" to="/cars/karavan" class="dropdown-item">{{
+              $t('Caravan')
+            }}</nuxt-link>
             <nuxt-link tag="a" to="/cars" class="dropdown-item">Tümü</nuxt-link>
           </div>
         </li>
         <li class="nav-item active">
-          <nuxt-link tag="a" to="/iletisim" class="nav-link"
-            >İletişim</nuxt-link
-          >
+          <nuxt-link tag="a" to="/iletisim" class="nav-link">{{
+            $t('Contact')
+          }}</nuxt-link>
         </li>
       </ul>
       <div class="form-inline my-2 my-lg-0">
@@ -80,12 +80,29 @@
             class="btn btn-light dropdown-toggle"
             data-toggle="dropdown"
             aria-expanded="false"
-            style="color: #44a55a"
+            style="color: #44a55a; text-transform: uppercase"
           >
-            TR
+            {{ $i18n.locale }}
           </button>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" style="color: #44a55a">EN</a>
+          <div
+            class="dropdown-menu w-100 text-center"
+            style="min-width: 0px !important"
+          >
+            <button
+              v-for="locale in availableLocales"
+              :key="locale.code"
+              class="btn btn-light"
+            >
+              <nuxt-link
+                :to="switchLocalePath(locale.code)"
+                style="
+                  text-transform: uppercase;
+                  text-decoration: none;
+                  color: #44a55a;
+                "
+                >{{ locale.code }}</nuxt-link
+              >
+            </button>
           </div>
         </div>
         <nuxt-link
@@ -96,7 +113,7 @@
           style="color: #44a55a"
           v-if="!this.$store.state.auth.loggedIn"
         >
-          Giriş Yap/Kayıt Ol</nuxt-link
+          {{ $t('SignUporRegister') }}</nuxt-link
         >
         <button
           class="my-2 my-sm-0 btn btn-light"
@@ -105,7 +122,7 @@
           v-if="this.$store.state.auth.loggedIn"
           @click="logout"
         >
-          Çıkış
+          {{ $t('LogOut') }}
         </button>
       </div>
     </div>
@@ -120,6 +137,11 @@ export default {
     async logout() {
       await this.$auth.logout()
       this.$router.push('/login')
+    },
+  },
+  computed: {
+    availableLocales() {
+      return this.$i18n.locales.filter((i) => i.code !== this.$i18n.locale)
     },
   },
 }
