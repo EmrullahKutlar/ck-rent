@@ -3,7 +3,7 @@
     variant="success"
     class="navbar navbar-expand-lg navbar-light bg-light emr"
   >
-    <nuxt-link tag="a" to="/" class="navbar-brand">CK-Rent</nuxt-link>
+    <nuxt-link tag="a" :to="localePath('/')" class="navbar-brand">CK-Rent</nuxt-link>
     <button
       class="navbar-toggler"
       type="button"
@@ -19,17 +19,17 @@
     <div class="collapse navbar-collapse ml-3" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <nuxt-link tag="a" to="/rezervasyon" class="nav-link">{{
+          <nuxt-link tag="a" :to="localePath('rezervasyon')" class="nav-link">{{
             $t('Reservation')
           }}</nuxt-link>
         </li>
         <li class="nav-item active">
-          <nuxt-link tag="a" to="/kampanyalar" class="nav-link">{{
+          <nuxt-link tag="a" :to="localePath('kampanyalar')" class="nav-link">{{
             $t('Campaigns')
           }}</nuxt-link>
         </li>
         <li class="nav-item active">
-          <nuxt-link tag="a" to="/ofislerimiz" class="nav-link">{{
+          <nuxt-link tag="a" :to="localePath('ofislerimiz')" class="nav-link">{{
             $t('Ouroffices')
           }}</nuxt-link>
         </li>
@@ -46,29 +46,29 @@
             Filo
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <nuxt-link tag="a" to="/cars/ekonomik" class="dropdown-item">{{
+            <nuxt-link tag="a" :to="localePath(`cars`)+`/`+`ekonomik`" class="dropdown-item">{{
               $t('Economic')
             }}</nuxt-link>
-            <nuxt-link tag="a" to="/cars/orta" class="dropdown-item">{{
+            <nuxt-link tag="a" :to="localePath(`cars`)+`/`+`orta`" class="dropdown-item">{{
               $t('MiddleSegment')
             }}</nuxt-link>
-            <nuxt-link tag="a" to="/cars/vip" class="dropdown-item"
+            <nuxt-link tag="a" :to="localePath(`cars`)+`/`+`vip`" class="dropdown-item"
               >Vip</nuxt-link
             >
-            <nuxt-link tag="a" to="/cars/suv" class="dropdown-item"
+            <nuxt-link tag="a" :to="localePath(`cars`)+`/`+`suv`" class="dropdown-item"
               >Suv</nuxt-link
             >
-            <nuxt-link tag="a" to="/cars/sport" class="dropdown-item"
+            <nuxt-link tag="a" :to="localePath(`cars`)+`/`+`sport`" class="dropdown-item"
               >Sport</nuxt-link
             >
-            <nuxt-link tag="a" to="/cars/karavan" class="dropdown-item">{{
+            <nuxt-link tag="a" :to="localePath(`cars`)+`/`+`karavan`" class="dropdown-item">{{
               $t('Caravan')
             }}</nuxt-link>
-            <nuxt-link tag="a" to="/cars" class="dropdown-item">{{$t(`All`)}}</nuxt-link>
+            <nuxt-link tag="a" :to="localePath(`cars`)" class="dropdown-item">{{$t(`All`)}}</nuxt-link>
           </div>
         </li>
         <li class="nav-item active">
-          <nuxt-link tag="a" to="/iletisim" class="nav-link">{{
+          <nuxt-link tag="a" :to="localePath(`iletisim`)" class="nav-link">{{
             $t('Contact')
           }}</nuxt-link>
         </li>

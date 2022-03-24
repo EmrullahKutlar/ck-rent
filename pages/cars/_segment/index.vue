@@ -5,16 +5,16 @@
         class="text-center"
         style="color: #44a55a; text-transform: capitalize"
       >
-        {{ segment }}
+        {{ $t(segment) }}
       </h2>
     </div>
     <div class="row">
       <div class="col d-flex nav-link-div">
-        <nuxt-link to="/" class="nav-links">Anasayfa</nuxt-link>
+        <nuxt-link :to="localePath(`/`)" class="nav-links">{{$t(`Home`)}}</nuxt-link>
         <i class="fas fa-chevron-right nav-links"></i>
-        <nuxt-link to="/cars" class="nav-links">Tüm Segmentler</nuxt-link>
+        <nuxt-link :to="localePath(`cars`)" class="nav-links">{{$t(`AllSegments`)}}</nuxt-link>
         <i class="fas fa-chevron-right nav-links"></i>
-        <div style="text-transform: capitalize">{{ segment }}</div>
+        <div style="text-transform: capitalize">{{ $t(segment) }}</div>
       </div>
     </div>
     <div class="row mt-3">
@@ -28,7 +28,7 @@
       >
         <div class="col-12 car-card">
           <div class="col-12">
-            <nuxt-link :to="'/cars/' + segment + '/mercedes'"
+            <nuxt-link :to="localePath(`cars`)+`/`+ segment + '/mercedes'"
               ><img style="width: 80%" src="~/assets/brands/mercedes.png"
             /></nuxt-link>
           </div>
@@ -44,7 +44,7 @@
       >
         <div class="col-12 car-card">
           <div class="col-12">
-            <nuxt-link :to="'/cars/' + segment + '/jeep'"
+            <nuxt-link :to="localePath(`cars`)+`/`+ segment + '/jeep'"
               ><img style="width: 80%" src="~/assets/brands/jeep.png"
             /></nuxt-link>
           </div>
@@ -60,7 +60,7 @@
       >
         <div class="col-12 car-card">
           <div class="col-12">
-            <nuxt-link :to="'/cars/' + segment + '/renault'"
+            <nuxt-link :to="localePath(`cars`)+`/`+ segment + '/renault'" 
               ><img style="width: 80%" src="~/assets/brands/renault.png"
             /></nuxt-link>
           </div>
@@ -76,7 +76,7 @@
       >
         <div class="col-12 car-card">
           <div class="col-12">
-            <nuxt-link :to="'/cars/' + segment + '/peugeot'"
+            <nuxt-link :to="localePath(`cars`)+`/`+ segment + '/peugeot'" 
               ><img style="width: 80%" src="~/assets/brands/peugeot.png"
             /></nuxt-link>
           </div>
@@ -92,7 +92,7 @@
       >
         <div class="col-12 car-card">
           <div class="col-12">
-            <nuxt-link :to="'/cars/' + segment + '/citroen'"
+            <nuxt-link :to="localePath(`cars`)+`/`+ segment + '/citroen'"
               ><img style="width: 80%" src="~/assets/brands/citroen.png"
             /></nuxt-link>
           </div>
@@ -108,7 +108,7 @@
       >
         <div class="col-12 car-card">
           <div class="col-12">
-            <nuxt-link :to="'/cars/' + segment + '/crawler'"
+            <nuxt-link :to="localePath(`cars`)+`/`+ segment + '/crawler'"
               ><img style="width: 80%" src="~/assets/brands/crawler.jpg"
             /></nuxt-link>
           </div>

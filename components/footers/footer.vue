@@ -67,22 +67,22 @@
                 style="width: 60px; background-color: #fff; height: 2px"
               />
               <p>
-                <nuxt-link to="/cars/ekonomik/renault/30" class="text-white">
+                <nuxt-link :to="localePath(`cars`)+`/ekonomik/renault/30`" class="text-white">
                   Renault Symbol
                 </nuxt-link>
               </p>
               <p>
-                <nuxt-link to="/cars/ekonomik/peugeot/28" class="text-white">
+                <nuxt-link :to="localePath(`cars`)+`/ekonomik/peugeot/28`" class="text-white">
                   Peugeot 301
                 </nuxt-link>
               </p>
               <p>
-                <nuxt-link to="/cars/vip/mercedes/8" class="text-white">
+                <nuxt-link :to="localePath(`cars`)+`/vip/mercedes/8`" class="text-white">
                   Mercedes E200
                 </nuxt-link>
               </p>
               <p>
-                <nuxt-link to="/cars/suv/jeep/14" class="text-white">
+                <nuxt-link :to="localePath(`cars`)+`/suv/jeep/14`" class="text-white">
                   Jeep Renegade T Sport
                 </nuxt-link>
               </p>
@@ -98,17 +98,17 @@
                 style="width: 60px; background-color: #fff; height: 2px"
               />
               <p>
-                <nuxt-link to="/rezervasyon" class="text-white">
+                <nuxt-link :to="localePath(`rezervasyon`)" class="text-white">
                   {{$t(`Reservation`)}}
                 </nuxt-link>
               </p>
               <p>
-                <nuxt-link to="/kampanyalar" class="text-white">
+                <nuxt-link :to="localePath(`kampanyalar`)" class="text-white">
                   {{$t(`Campaigns`)}}
                 </nuxt-link>
               </p>
               <p>
-                <nuxt-link to="/iletisim" class="text-white">
+                <nuxt-link :to="localePath(`iletisim`)" class="text-white">
                   {{$t(`Contact`)}}
                 </nuxt-link>
               </p>

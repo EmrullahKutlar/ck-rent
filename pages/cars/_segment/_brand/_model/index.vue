@@ -37,33 +37,33 @@
         <div class="car-title">{{ tbody.name }}</div>
         <div class="properties properties-borders mt-4">
           <div class="properties-item">
-            <span class="properties-item-title">Kişi</span>
+            <span class="properties-item-title">{{ $t(`Person`) }}</span>
             <span class="properties-item-icon">
               <i class="icon-bag2"></i> <em>{{ tbody.people }}</em>
             </span>
           </div>
           <div class="properties-item">
-            <span class="properties-item-title">Bagaj</span>
+            <span class="properties-item-title">{{ $t(`Luggage`) }}</span>
             <span class="properties-item-icon">
               <i class="icon-bag2"></i> <em>{{ tbody.luggage }}</em>
             </span>
           </div>
           <div class="properties-item">
-            <span class="properties-item-title">Vites</span>
+            <span class="properties-item-title">{{ $t(`Gear`) }}</span>
             <span class="properties-item-icon">
               <i class="nxm-ico-vitesicon"></i> <em>{{ tbody.gear }}</em>
             </span>
           </div>
 
           <div class="properties-item">
-            <span class="properties-item-title">Yakıt</span>
+            <span class="properties-item-title">{{ $t(`Fuel`) }}</span>
             <span class="properties-item-icon">
               <i class="icon-car"></i> <em> {{ tbody.fuel }} </em>
             </span>
           </div>
 
           <div class="properties-item">
-            <span class="properties-item-title">Günlük Ücret</span>
+            <span class="properties-item-title">{{ $t(`DailyFee`) }}</span>
             <span class="properties-item-icon">
               <i class="icon-credit-card"></i> <em>{{ tbody.rentFee }}</em>
             </span>
@@ -71,13 +71,7 @@
         </div>
         <div class="row d-flex justify-content-around">
           <div
-            class="
-              col-12 col-sm-12 col-md-4 col-lg-4
-              d-flex
-              justify-content-center
-              align-items-center
-              mt-4
-            "
+            class="col-12 col-sm-12 col-md-4 col-lg-4 d-flex justify-content-center align-items-center mt-4"
           >
             <!-- <p style="margin: 0; min-width: 95px">Alış Tarihi:</p> -->
 
@@ -94,7 +88,7 @@
               :state="true"
               :min="min"
               :max="max"
-              placeholder="Alış Tarhini Seçiniz"
+              :placeholder="$t('PurchaseDate')"
               nav-button-variant="success"
               selected-variant="success"
               class="datepicker align-items-center"
@@ -108,12 +102,7 @@
             ></b-form-datepicker>
           </div>
           <div
-            class="
-              col-12 col-sm-12 col-md-4 col-lg-4
-              d-flex
-              justify-content-center
-              mt-4
-            "
+            class="col-12 col-sm-12 col-md-4 col-lg-4 d-flex justify-content-center mt-4"
           >
             <!-- <p style="margin: 0; min-width: 95px">Teslim Tarihini:</p> -->
             <b-form-datepicker
@@ -130,7 +119,7 @@
               :max="maxTeslimDate"
               nav-button-variant="danger"
               selected-variant="danger"
-              placeholder="Teslim Tarhini Seçiniz"
+              :placeholder="$t(`DeliveryDate`)"
               class="datepicker teslim align-items-center"
               v-model="teslim"
               label-help=""
@@ -139,7 +128,7 @@
         </div>
 
         <div class="col-12 d-flex justify-content-center mt-4">
-          <b-button href="#" variant="success" @click="fi()">Kirala</b-button>
+          <b-button variant="success" @click="fi()">{{ $t(`Rent`) }}</b-button>
         </div>
       </div>
     </div>
@@ -287,8 +276,14 @@ export default {
     },
 
     fi() {
-      this.hesapla()
-      this.payment = true
+      if (this.alis.length <= 0 && this.teslim.length <= 0) {
+       this.$toast
+            .error(`please choose date`)
+            .goAway(1500)
+      } else {
+        this.hesapla()
+        this.payment = true
+      }
     },
     goHome() {
       this.$router.push('/')

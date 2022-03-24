@@ -1,13 +1,13 @@
 <template>
   <div class="container mb-3" style="min-height: 300px; margin-top: 75px">
     <div class="col-12">
-      <h2 class="text-center" style="color: #44a55a">Tüm Segmentler</h2>
+      <h2 class="text-center" style="color: #44a55a">{{$t(`AllSegments`)}}</h2>
     </div>
     <div class="row">
       <div class="col d-flex nav-link-div">
-        <nuxt-link to="/" class="nav-links">Anasayfa</nuxt-link>
+        <nuxt-link to="/" class="nav-links">{{$t(`Home`)}}</nuxt-link>
         <i class="fas fa-chevron-right nav-links"></i>
-        <div>Tüm Segmentler</div>
+        <div>{{$t(`AllSegments`)}}</div>
       </div>
     </div>
     <div class="row mt-3">
@@ -21,13 +21,13 @@
       >
         <div class="col-12 car-card">
           <div class="col-12">
-            <nuxt-link to="/cars/ekonomik"
+            <nuxt-link  :to="localePath(`cars`)+`/ekonomik`" 
               ><img style="width: 80%" src="~/assets/cars/b-renault-clio.png"
             /></nuxt-link>
           </div>
           <div class="col-12" style="margin-top: -30px">
-            <nuxt-link to="/cars/ekonomik" class="car-title"
-              >Ekonomik</nuxt-link
+            <nuxt-link :to="localePath(`cars`)+`/ekonomik`"   class="car-title"
+              >{{$t("Economic")}}</nuxt-link
             >
           </div>
         </div>
@@ -42,12 +42,12 @@
       >
         <div class="col-12 car-card">
           <div class="col-12">
-            <nuxt-link to="/cars/orta"
+            <nuxt-link :to="localePath(`cars`)+`/orta`" 
               ><img style="width: 80%" src="~/assets/cars/renaultmegane1.png"
             /></nuxt-link>
           </div>
           <div class="col-12" style="margin-top: -30px">
-            <nuxt-link to="/cars/orta" class="car-title">Orta</nuxt-link>
+            <nuxt-link :to="localePath(`cars`)+`/orta`"  class="car-title">{{$t("MiddleSegment")}}</nuxt-link>
           </div>
         </div>
       </div>
@@ -61,12 +61,12 @@
       >
         <div class="col-12 car-card">
           <div class="col-12">
-            <nuxt-link to="/cars/vip"
+            <nuxt-link :to="localePath(`cars`)+`/vip`" 
               ><img style="width: 80%" src="~/assets/cars/mercedesE200.png"
             /></nuxt-link>
           </div>
           <div class="col-12" style="margin-top: -30px">
-            <nuxt-link to="/cars/vip" class="car-title">Vip</nuxt-link>
+            <nuxt-link :to="localePath(`cars`)+`/vip`"  class="car-title">Vip</nuxt-link>
           </div>
         </div>
       </div>
@@ -80,12 +80,12 @@
       >
         <div class="col-12 car-card">
           <div class="col-12">
-            <nuxt-link to="/cars/suv"
+            <nuxt-link :to="localePath(`cars`)+`/suv`" 
               ><img style="width: 80%" src="~/assets/cars/JeepRenegade.png"
             /></nuxt-link>
           </div>
           <div class="col-12" style="margin-top: -30px">
-            <nuxt-link to="/cars/suv" class="car-title">Suv</nuxt-link>
+            <nuxt-link :to="localePath(`cars`)+`/suv`"  class="car-title">Suv</nuxt-link>
           </div>
         </div>
       </div>
@@ -99,12 +99,12 @@
       >
         <div class="col-12 car-card">
           <div class="col-12">
-            <nuxt-link to="/cars/sport"
+            <nuxt-link :to="localePath(`cars`)+`/sport`" 
               ><img style="width: 80%" src="~/assets/cars/o-honda-civic.png"
             /></nuxt-link>
           </div>
           <div class="col-12" style="margin-top: -30px">
-            <nuxt-link to="/cars/sport" class="car-title" style=""
+            <nuxt-link :to="localePath(`cars`)+`/sport`"  class="car-title" style=""
               >Sport</nuxt-link
             >
           </div>
@@ -120,13 +120,13 @@
       >
         <div class="col-12 car-card">
           <div class="col-12">
-            <nuxt-link to="/cars/karavan"
+            <nuxt-link :to="localePath(`cars`)+`/karavan`" 
               ><img style="width: 80%" src="~/assets/cars/crowler-karavan.png"
             /></nuxt-link>
           </div>
           <div class="col-12" style="margin-top: -30px">
-            <nuxt-link to="/cars/karavan" class="car-title" style=""
-              >Karavan</nuxt-link
+            <nuxt-link :to="localePath(`cars`)+`/karavan`"  class="car-title" style=""
+              >{{$t(`Caravan`)}}</nuxt-link
             >
           </div>
         </div>

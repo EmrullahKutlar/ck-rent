@@ -7,47 +7,47 @@
         :key="index"
       >
         <div class="card pt-2" style="width: auto">
-          <!-- <img
+           <img
             :src="require('~/assets/cars/' + item.carsImagePath)"
             class="card-img-top"
             alt=""
-          /> -->
+          /> 
           <div class="card-body">
             <h5 class="card-title text-center">{{ item.name }}</h5>
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
-              Bagaj:
+              {{$t(`Luggage`)}}:
               <span class="veri">{{ item.luggage + ' ' }}Büyük Valiz</span>
             </li>
             <li class="list-group-item">
-              Yakıt:
+              {{$t(`Fuel`)}}:
               <span class="veri">{{ item.fuel }}</span>
             </li>
             <li class="list-group-item">
-              Vites:
+              {{$t(`Gear`)}}:
               <span class="veri">{{ item.gear }}</span>
             </li>
             <li class="list-group-item">
-              Kapı:
+              {{$t(`Door`)}}:
               <span class="veri">{{ item.doors }}</span>
             </li>
             <li class="list-group-item">
-              Günlük Ücret:
+              {{$t(`DailyFee`)}}:
               <span class="veri">{{ item.rentFee }} ₺</span>
             </li>
           </ul>
           <div class="card-body text-center">
             <nuxt-link
-              :to="'/cars/' + segment + '/' + brand + '/' + item.id"
+              :to="localePath(`cars`)+`/` + segment + '/' + brand + '/' + item.id"
               class="card-link"
-              >Hemen Kirala</nuxt-link
+              >{{$t(`RentNow`)}}</nuxt-link
             >
           </div>
         </div>
       </div>
     </div>
-    <div class="row" style="min-height: 300px" v-if="bos">
+    <div class="row" style="min-height: 300px" v-else>
       <div class="col-12 text-center" style="font-size: 25px; color: #44a55a">
         {{ bos }}
       </div>

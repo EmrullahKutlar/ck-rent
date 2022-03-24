@@ -1,4 +1,4 @@
-export default function({ app }) {
+/*export default function({ app }) {
     // onBeforeLanguageSwitch called right before setting a new locale
     app.i18n.onBeforeLanguageSwitch = (
         oldLocale,
@@ -12,4 +12,4 @@ export default function({ app }) {
     app.i18n.onLanguageSwitched = (oldLocale, newLocale) => {
         console.log(oldLocale, newLocale);
     };
-}
+}*/
