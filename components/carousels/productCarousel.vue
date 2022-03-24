@@ -3,7 +3,7 @@
     <div class="">
       <div class="col-12 text-center mb-3">
         <h2 style="font-size: 32px; font-weight: 900; color: #44a55a">
-          Favori Araçlar
+          {{$t(`FavoriteCars`)}}
         </h2>
       </div>
       <div class="">

@@ -5,7 +5,31 @@
     "Contact": "İletişim",
     "Economic": "Ekonomik",
     "MiddleSegment": "Orta",
+    "All":"Tümü",
     "Caravan": "Karavan",
     "SignUporRegister": "Giriş Yap/Kayıt Ol",
-    "LogOut": "Çıkış"
+    "LogOut": "Çıkış",
+    "PurchaseDate":"Alış Tarihi Seçiniz",
+    "DeliveryDate":"Teslim Tarihi Seçiniz",
+    "ChooseSegment":"Segment Seçiniz",
+    "SearchCars":"Araç Ara",
+    "FavoriteCars":"Favori Araçlar",
+    "Discount1":"Seçili Suv Modellerinde %25'e Varan İndirimler",
+    "Discount2":"Online Ödemelerde %10 İndirim",
+    "SubTitle":"Alt Başlık",
+    "Open":"Görüntüle",
+    "ContactSocialMedia":"Bizimle Sosyal Medyadan İletişime Geçin",
+    "Cars":"Araçlar",
+    "UsefulLinks":"Yararlı Linkler"
+
+
+
+
+
+
+
+
+
+
+
 }

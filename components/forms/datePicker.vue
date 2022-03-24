@@ -34,7 +34,7 @@
           :state="true"
           :min="min"
           :max="max"
-          placeholder="Alış Tarhini Seçiniz"
+          :placeholder="$t('PurchaseDate')"
           nav-button-variant="success"
           selected-variant="success"
           class="datepicker align-items-center"
@@ -70,7 +70,7 @@
           :max="maxTeslimDate"
           nav-button-variant="danger"
           selected-variant="danger"
-          placeholder="Teslim Tarhini Seçiniz"
+          :placeholder="$t(`DeliveryDate`)"
           class="datepicker teslim align-items-center"
           v-model="teslim"
           label-help=""
@@ -93,7 +93,7 @@
           style="width: -webkit-fill-available"
           class="mt-3"
           variant="success"
-          >Araç Ara</b-button
+          >{{$t("SearchCars")}}</b-button
         >
       </div>
     </div>
@@ -124,7 +124,7 @@ export default {
       maxTeslimDate: '',
       selected: null,
       options: [
-        { value: null, text: 'Segment Seçiniz', disabled: true },
+        { value: null, text: this.$t('ChooseSegment'), disabled: true },
         { value: 'Ekonomik', text: 'Ekonomik' },
         { value: 'Orta', text: 'Orta' },
         { value: 'Vip', text: 'Vip' },

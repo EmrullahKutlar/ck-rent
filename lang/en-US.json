@@ -4,8 +4,22 @@
     "Ouroffices": "Our offices",
     "Contact": "Contact",
     "Economic": "Economic",
-    "MiddleSegment": "MiddleSegment",
+    "MiddleSegment": "Middle Segment",
+    "All":"All",
     "Caravan": "Caravan",
     "SignUporRegister": "Sign Up/Register",
-    "LogOut": "Logout"
+    "LogOut": "Logout",
+    "PurchaseDate":"Choose Purchase Date",
+    "DeliveryDate":"Choose Delivery Date",
+    "ChooseSegment":"Choose a Segment",
+    "SearchCars":"Search Cars",
+    "FavoriteCars":"Favorite Cars",
+    "Discount1":"Up to 25% Off Selected SUV Models",
+    "Discount2":"10% Discount on Online Payments",
+    "SubTitle":"Sub Title",
+    "Open":"Open",
+    "ContactSocialMedia":"Contact Us on Social Media",
+    "Cars":"Cars",
+    "UsefulLinks":"Useful Links"
+    
 }

@@ -6,7 +6,7 @@
           class="text-center"
           style="font-size: 32px; font-weight: 900; color: #44a55a"
         >
-          Kampanyalar
+          {{$t(`Campaigns`)}}
         </h2>
       </div>
       <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
@@ -14,14 +14,14 @@
           <img style="width: 100%" src="~/assets/cars/mercedes.png" />
           <template #header>
             <h6 class="mb-0" style="color: #44a55a">
-              Seçili Suv Modellerinde %25'e Varan İndirimler
+              {{$t(`Discount1`)}}
             </h6>
           </template>
           <b-card-text style="font-weight: 600; font-size: 19px; color: #44a55a"
-            >Alt Baslık</b-card-text
+            >{{$t(`SubTitle`)}}</b-card-text
           >
           <b-card-text style="color: #44a55a">Yazilar.</b-card-text>
-          <b-button href="#" variant="success"> Görüntüle</b-button>
+          <b-button href="#" variant="success"> {{$t(`Open`)}}</b-button>
         </b-card>
       </div>
       <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
@@ -29,14 +29,14 @@
           <img style="width: 100%" src="~/assets/cars/mercedes.png" />
           <template #header>
             <h6 class="mb-0" style="color: #44a55a">
-              Seçili Suv Modellerinde %25'e Varan İndirimler
+              {{$t(`Discount1`)}}
             </h6>
           </template>
           <b-card-text style="font-weight: 600; font-size: 19px; color: #44a55a"
-            >Alt Baslık</b-card-text
+            >{{$t(`SubTitle`)}}</b-card-text
           >
           <b-card-text style="color: #44a55a">Yazilar</b-card-text>
-          <b-button href="#" variant="success"> Görüntüle</b-button>
+          <b-button href="#" variant="success"> {{$t(`Open`)}}</b-button>
         </b-card>
       </div>
       <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
@@ -44,14 +44,14 @@
           <img style="width: 100%" src="~/assets/cars/mercedes.png" />
           <template #header>
             <h6 class="mb-0" style="color: #44a55a">
-              Online Ödemelerde %10 İndirim
+              {{$t(`Discount2`)}}
             </h6>
           </template>
           <b-card-text style="font-weight: 600; font-size: 19px; color: #44a55a"
-            >Alt Baslık</b-card-text
+            >{{$t(`SubTitle`)}}</b-card-text
           >
           <b-card-text style="color: #44a55a">Yazilar</b-card-text>
-          <b-button href="#" variant="success"> Görüntüle</b-button>
+          <b-button href="#" variant="success"> {{$t(`Open`)}}</b-button>
         </b-card>
       </div>
     </div>

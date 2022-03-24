@@ -13,7 +13,7 @@
       >
         <!-- Left -->
         <div class="me-5">
-          <span>Bizimle Sosyal Medyadan İletişime Geçin:</span>
+          <span>{{$t("ContactSocialMedia")}}:</span>
         </div>
         <!-- Left -->
 
@@ -61,7 +61,7 @@
             <!-- Grid column -->
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
               <!-- Links -->
-              <h6 class="text-uppercase fw-bold">Araçlar</h6>
+              <h6 class="text-uppercase fw-bold">{{$t("Cars")}}</h6>
               <hr
                 class="mb-4 mt-0 d-inline-block mx-auto"
                 style="width: 60px; background-color: #fff; height: 2px"
@@ -92,24 +92,24 @@
             <!-- Grid column -->
             <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
               <!-- Links -->
-              <h6 class="text-uppercase fw-bold">Yararlı Linkler</h6>
+              <h6 class="text-uppercase fw-bold">{{$t(`UsefulLinks`)}}</h6>
               <hr
                 class="mb-4 mt-0 d-inline-block mx-auto"
                 style="width: 60px; background-color: #fff; height: 2px"
               />
               <p>
                 <nuxt-link to="/rezervasyon" class="text-white">
-                  Rezarvasyon
+                  {{$t(`Reservation`)}}
                 </nuxt-link>
               </p>
               <p>
                 <nuxt-link to="/kampanyalar" class="text-white">
-                  Kampanyalar
+                  {{$t(`Campaigns`)}}
                 </nuxt-link>
               </p>
               <p>
                 <nuxt-link to="/iletisim" class="text-white">
-                  İletisim
+                  {{$t(`Contact`)}}
                 </nuxt-link>
               </p>
             </div>
@@ -118,7 +118,7 @@
             <!-- Grid column -->
             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
               <!-- Links -->
-              <h6 class="text-uppercase fw-bold">İletişim</h6>
+              <h6 class="text-uppercase fw-bold">{{$t(`Contact`)}}</h6>
               <hr
                 class="mb-4 mt-0 d-inline-block mx-auto"
                 style="width: 60px; background-color: #fff; height: 2px"

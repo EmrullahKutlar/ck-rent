@@ -64,7 +64,7 @@
             <nuxt-link tag="a" to="/cars/karavan" class="dropdown-item">{{
               $t('Caravan')
             }}</nuxt-link>
-            <nuxt-link tag="a" to="/cars" class="dropdown-item">Tümü</nuxt-link>
+            <nuxt-link tag="a" to="/cars" class="dropdown-item">{{$t(`All`)}}</nuxt-link>
           </div>
         </li>
         <li class="nav-item active">
