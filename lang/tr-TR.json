@@ -36,7 +36,60 @@
     "Door":"Kapı",
     "DailyFee":"Günlük Ücret",
     "RentNow":"Hemen Kirala",
-    "Person":"Kişi"
+    "Person":"Kişi",
+    "Login":"Giriş Yap",
+    "Password":"Şifre",
+    "ForgotPass":"Şifremi Unuttum",
+    "NoAccount":"Henüz bir hesabın yok mu?",
+    "Register":"Kayıt Ol",
+    "EnterEmail":"Lütfen Email Adresinizi Girin.",
+    "Send":"Gönder",
+    "NameSurname":"Ad Soyad*",
+    "PleaseValidMail":"Geçerli Bir Email Adresi Giriniz",
+    "RegisterPass":"Şifre* (Min 8 Karakter)",
+    "ConfirmPass":"Şifre Tekrar*",
+    "PasswordNotSame":"Passwords Not Same",
+    "UploadSelfie":"Selfie Yükle*",
+    "UploadDriver":"Ehliyetinizi Yükleyin*",
+    "MembershipAgreement":"Üyelik Sözleşmesi",
+    "PrivacyPolicy":"Gizlilik Politikası",
+    "And":"ve",
+    "Accept":"Kabul Ediyorum",
+    "Upload":"Yükle",
+    "ComingSoon":"Çok Yakinda Hizmetinizde...",
+    "WaitSegment":"Bu Segment İçin Yeni Araçlarımız Gelecek...",
+    "Dizel":"Dizel",
+    "TotalFee":"Toplam Ücret",
+    "CartNumber":"Cart Numarası",
+    "ExpirationDate":"Son Kullanım Tarihi",
+    "CardOwner":"CarT Shibi",
+    "ConfirmPayment":"Ödemeyi Tamamla",
+    "Cancel":"İptal"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
     
 
 

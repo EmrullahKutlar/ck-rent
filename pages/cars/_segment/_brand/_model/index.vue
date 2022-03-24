@@ -138,7 +138,7 @@
           <div class="card">
             <div class="card-header">
               <div class="row d-flex justify-content-center">
-                <h3 class="text-center">ÖDENECEK TUTAR</h3>
+                <h3 class="text-center">{{$t(`TotalFee`)}}</h3>
                 <div class="col-12 text-center">
                   <h4>{{ toplamGun * tbody.rentFee }}₺</h4>
                 </div>
@@ -149,12 +149,12 @@
                 <div class="row">
                   <div class="col-12">
                     <div class="form-group">
-                      <label>CART NUMARASI</label>
+                      <label>{{$t(`CartNumber`)}}</label>
                       <div class="input-group">
                         <input
                           type="tel"
                           class="form-control"
-                          placeholder="Cart Numarası"
+                          :placeholder="$t(`CartNumber`)"
                         />
                         <span class="input-group-addon"
                           ><span class="fa fa-credit-card"></span
@@ -167,8 +167,7 @@
                   <div class="col-7 col-md-7">
                     <div class="form-group">
                       <label
-                        ><span class="visible-inline">SONA ERME</span>
-                        TARİHİ</label
+                        >{{$t(`ExpirationDate`)}}</label
                       >
                       <input
                         type="tel"
@@ -179,11 +178,11 @@
                   </div>
                   <div class="col-5 col-md-5 float-right">
                     <div class="form-group">
-                      <label>CV CODU</label>
+                      <label>CVV</label>
                       <input
                         type="tel"
                         class="form-control"
-                        placeholder="CVC"
+                        placeholder="CVV"
                       />
                     </div>
                   </div>
@@ -191,11 +190,11 @@
                 <div class="row">
                   <div class="col-12">
                     <div class="form-group">
-                      <label>CART SAHİBİ</label>
+                      <label>{{$t(`CardOwner`)}}</label>
                       <input
                         type="text"
                         class="form-control"
-                        placeholder="Card Sahibinin Adı"
+                        :placeholder="$t(`CardOwner`)"
                       />
                     </div>
                   </div>
@@ -206,12 +205,12 @@
               <div class="row">
                 <div class="col-12">
                   <button class="btn btn-success btn-lg btn-block">
-                    Ödemeyi Tamamla</button
+                    {{$t(`ConfirmPayment`)}}</button
                   ><button
                     class="btn btn-danger btn-lg btn-block"
                     @click="goHome"
                   >
-                    İptal Et
+                    {{$t(`Cancel`)}}
                   </button>
                 </div>
               </div>

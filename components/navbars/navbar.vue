@@ -109,7 +109,7 @@
           class="my-2 my-sm-0 btn btn-light"
           tag="button"
           variant="light"
-          to="/login"
+          :to="localePath(`login`)"
           style="color: #44a55a"
           v-if="!this.$store.state.auth.loggedIn"
         >

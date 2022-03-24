@@ -25,7 +25,7 @@
                     </div>
 
                     <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px">
-                      Giriş Yap
+                      {{$t(`Login`)}}
                     </h5>
 
                     <div class="form-outline mb-4">
@@ -47,7 +47,7 @@
                         type="password"
                         id="form2Example27"
                         class="form-control"
-                        placeholder="Şifre*"
+                        :placeholder="$t(`Password`)+`*`"
                         required
                         :class="{
                           error: bosForm,
@@ -62,7 +62,7 @@
                         type="button"
                         @click="Login"
                       >
-                        Giriş Yap
+                        {{$t(`Login`)}}
                       </button>
                     </div>
 
@@ -72,16 +72,16 @@
                       @click.prevent
                       @click="sifremiUnuttum = !sifremiUnuttum"
                     >
-                      Şifremi Unuttum
+                      {{$t(`ForgotPass`)}}
                     </button>
                     <p class="mb-5 pb-lg-2" style="color: #393f81">
-                      Henüz bir hesabın yok mu?
+                      {{$t(`NoAccount`)}}
                       <button
                         @click.prevent
                         class="register-b"
                         @click="register = !register"
                       >
-                        Kayıt Ol
+                        {{$t(`Register`)}}
                       </button>
                     </p>
                   </form>
@@ -91,13 +91,13 @@
                     centered
                     header-bg-variant="success"
                     header-text-variant="light"
-                    title="Kayıt Ol"
+                    :title="$t(`Register`)"
                     ><form>
                       <div class="form-outline mb-4">
                         <input
                           type="Name"
                           class="form-control"
-                          placeholder="*Ad Soyad"
+                          :placeholder="$t(`NameSurname`)"
                           v-model="newUser.fullName"
                           :class="{
                             error: validation.hasError('newUser.fullName'),
@@ -109,12 +109,12 @@
                           style="font-size: 11px; color: red"
                           v-if="validation.hasError('newUser.email')"
                         >
-                          Geçerli Bir Email Adresi Giriniz...
+                          {{$t(`PleaseValidMail`)}}
                         </span>
                         <input
                           type="email"
                           class="form-control"
-                          placeholder="*Email"
+                          placeholder="Email*"
                           v-model="newUser.email"
                           :class="{
                             error: validation.hasError('newUser.email'),
@@ -126,7 +126,7 @@
                         <input
                           type="password"
                           class="form-control"
-                          placeholder="*Şifre  (Minimum 8 Karater Giriniz)"
+                          :placeholder="$t(`RegisterPass`)"
                           v-model="newUser.password"
                           :class="{
                             error: validation.hasError('newUser.password'),
@@ -138,12 +138,12 @@
                           style="font-size: 11px; color: red"
                           v-if="validation.hasError('newUser.rePassword')"
                         >
-                          Şifreler Uyuşmuyor
+                          {{$t(`PasswordNotSame`)}}
                         </span>
                         <input
                           type="password"
                           class="form-control"
-                          placeholder="*Şifre Tekrar"
+                          :placeholder="$t(`ConfirmPass`)"
                           :class="{
                             error: validation.hasError('newUser.rePassword'),
                           }"
@@ -152,9 +152,9 @@
                       </div>
                       <div class="form-outline mb-4">
                         <b-form-file
-                          placeholder="*Selfie Yükleyin"
+                          :placeholder="$t(`UploadSelfie`)"
                           drop-placeholder="Dosyayı Buraya Sürükleyin"
-                          browse-text="Yükle"
+                          :browse-text="$t(`Upload`)"
                           accept="image/*"
                           v-model="newUser.selfie"
                           :class="{
@@ -164,9 +164,9 @@
                       </div>
                       <div class="form-outline mb-4">
                         <b-form-file
-                          placeholder="*Ehliyetinizi Yükleyin"
+                          :placeholder="$t(`UploadDriver`)"
                           drop-placeholder="Dosyayı Buraya Sürükleyin"
-                          browse-text="Yükle"
+                          :browse-text="$t(`Upload`)"
                           accept="image/*"
                           v-model="newUser.drivingLicence"
                           :class="{
@@ -193,16 +193,16 @@
                             @click.prevent
                             @click="uyelikSoz = !uyelikSoz"
                           >
-                            Üyelik Sözleşmesi
+                            {{$t(`MembershipAgreement`)}}
                           </button>
-                          ve
+                          {{$t(`And`)}}
                           <button
                             class="register-b"
                             @click.prevent
                             @click="gizlikSoz = !gizlikSoz"
                           >
-                            Gizlilik Politikası</button
-                          >'nı Kabul Ediyorum
+                            {{$t(`PrivacyPolicy`)}}</button
+                          > {{$t(`Accept`)}}
                         </b-form-checkbox>
                       </div>
                       <div class="form-outline mb-2">
@@ -211,7 +211,7 @@
                           type="button"
                           @click="registerCheck"
                         >
-                          Kayıt Ol
+                          {{$t(`Register`)}}
                         </button>
                       </div>
                     </form>
@@ -222,7 +222,7 @@
                     centered
                     header-bg-variant="success"
                     header-text-variant="light"
-                    title="Üyelik Sözleşmesi"
+                    :title="$t(`MembershipAgreement`)"
                     ><register
                   /></b-modal>
                   <b-modal
@@ -231,7 +231,7 @@
                     centered
                     header-bg-variant="success"
                     header-text-variant="light"
-                    title="Gizlilik Sözleşmesi"
+                    :title="$t(`PrivacyPolicy`)"
                     ><register
                   /></b-modal>
                   <b-modal
@@ -240,9 +240,9 @@
                     centered
                     header-bg-variant="success"
                     header-text-variant="light"
-                    title="Şifremi Unuttum"
+                    :title="$t(`ForgotPass`)"
                     ><div class="form-outline mb-4">
-                      Lütfen Email Adresinizi Girin.
+                      {{$t(`EnterEmail`)}}
                       <input
                         type="email"
                         class="form-control"
@@ -255,7 +255,7 @@
                         class="btn btn-success btn-lg btn-block"
                         type="button"
                       >
-                        Gönder
+                        {{$t(`Send`)}}
                       </button>
                     </div>
                   </b-modal>

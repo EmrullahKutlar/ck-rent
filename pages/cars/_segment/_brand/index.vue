@@ -18,11 +18,11 @@
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
               {{$t(`Luggage`)}}:
-              <span class="veri">{{ item.luggage + ' ' }}Büyük Valiz</span>
+              <span class="veri">{{ item.luggage + ' ' }}L</span>
             </li>
             <li class="list-group-item">
               {{$t(`Fuel`)}}:
-              <span class="veri">{{ item.fuel }}</span>
+              <span class="veri">{{ $t(item.fuel) }}</span>
             </li>
             <li class="list-group-item">
               {{$t(`Gear`)}}:
@@ -49,7 +49,7 @@
     </div>
     <div class="row" style="min-height: 300px" v-else>
       <div class="col-12 text-center" style="font-size: 25px; color: #44a55a">
-        {{ bos }}
+        {{ $t(`WaitSegment`) }}
       </div>
     </div>
   </div>
@@ -77,7 +77,7 @@ export default {
     if (tbody.length != 0) {
       return { tbody, segment, brand }
     } else {
-      var bos = 'Bu Segment İçin Yeni Araçlarımız Gelecek...'
+      var bos = `WaitSegment`
     }
     return { bos }
   },

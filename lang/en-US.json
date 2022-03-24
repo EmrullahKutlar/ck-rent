@@ -36,6 +36,37 @@
     "Door":"Door",
     "DailyFee":"Daily Fee",
     "RentNow":"Rent Now",
-    "Person":"Person"
+    "Person":"Person",
+    "Login":"Login",
+    "Password":"Password",
+    "ForgotPass":"Forgot Password",
+    "NoAccount":"You don't have an account yet?",
+    "Register":"Register",
+    "EnterEmail":"Please Enter Your Email Address.",
+    "Send":"Send",
+    "NameSurname":"Name Surname*",
+    "PleaseValidMail":"Please Enter a Valid Email Address",
+    "RegisterPass":"Password* (Min 8 Character)",
+    "ConfirmPass":"Confirm Password*",
+    "PasswordNotSame":"Passwords Not Same",
+    "UploadSelfie":"Upload Selfie*",
+    "UploadDriver":"Upload Driver's License*",
+    "MembershipAgreement":"Membership Agreement",
+    "PrivacyPolicy":"Privacy Policy",
+    "And":"and",
+    "Accept":"I Accept",
+    "Upload":"Upload",
+    "ComingSoon":"Coming Soon... Wait For Us",
+    "WaitSegment":"We Will Add Some Cars At Soon",
+    "Dizel":"Diesel",
+    "TotalFee":"Total Fee",
+    "CartNumber":"Card Number",
+    "ExpirationDate":"Expiration Date",
+    "CardOwner":"Card Owner",
+    "ConfirmPayment":"Confirm Payment",
+    "Cancel":"Cancel"
+
+
+
     
 }
