@@ -275,9 +275,9 @@ export default {
     },
 
     fi() {
-      if (this.alis.length <= 0 && this.teslim.length <= 0) {
+      if (this.teslim.length <= 0) {
        this.$toast
-            .error(`please choose date`)
+            .error(`please fill the calendar`)
             .goAway(1500)
       } else {
         this.hesapla()

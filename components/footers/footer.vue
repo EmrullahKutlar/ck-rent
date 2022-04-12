@@ -97,11 +97,7 @@
                 class="mb-4 mt-0 d-inline-block mx-auto"
                 style="width: 60px; background-color: #fff; height: 2px"
               />
-              <p>
-                <nuxt-link :to="localePath(`rezervasyon`)" class="text-white">
-                  {{$t(`Reservation`)}}
-                </nuxt-link>
-              </p>
+              
               <p>
                 <nuxt-link :to="localePath(`kampanyalar`)" class="text-white">
                   {{$t(`Campaigns`)}}

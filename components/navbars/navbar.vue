@@ -18,11 +18,7 @@
 
     <div class="collapse navbar-collapse ml-3" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <nuxt-link tag="a" :to="localePath('rezervasyon')" class="nav-link">{{
-            $t('Reservation')
-          }}</nuxt-link>
-        </li>
+        
         <li class="nav-item active">
           <nuxt-link tag="a" :to="localePath('kampanyalar')" class="nav-link">{{
             $t('Campaigns')

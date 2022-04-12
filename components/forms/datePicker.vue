@@ -93,6 +93,7 @@
           style="width: -webkit-fill-available"
           class="mt-3"
           variant="success"
+          @click="route"
           >{{$t("SearchCars")}}</b-button
         >
       </div>
@@ -149,6 +150,18 @@ export default {
       )
     },
   },
+  methods:{
+    route(){
+      if (this.selected == null) {
+       this.$toast
+            .error(`please fill the forms`)
+            .goAway(1500)
+      } else {
+       this.$router.push(this.localePath("cars")+"/"+ this.selected);
+      }
+      
+    }
+  }
 }
 </script>
 
