@@ -154,7 +154,7 @@ export default {
     route(){
       if (this.selected == null) {
        this.$toast
-            .error(`please fill the forms`)
+            .error(`Lütfen Bir Segment Seçiniz`)
             .goAway(1500)
       } else {
        this.$router.push(this.localePath("cars")+"/"+ this.selected);

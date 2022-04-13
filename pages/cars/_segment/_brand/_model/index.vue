@@ -277,7 +277,7 @@ export default {
     fi() {
       if (this.teslim.length <= 0) {
        this.$toast
-            .error(`please fill the calendar`)
+            .error(`Lütfen Alış ve Teslim Tarihi Seçiniz`)
             .goAway(1500)
       } else {
         this.hesapla()

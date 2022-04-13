@@ -1,12 +1,14 @@
 <template>
-  <cokYakinda />
+ <div class="container mb-5" style="min-height: 250px; margin-top: 75px">
+   <campaigns/>
+  </div>
 </template>
 
 <script>
-import cokYakinda from '~/components/cokYakinda/cokyakinda.vue'
+import Campaigns from '~/components/campaigns/campaigns.vue'
 export default {
   components: {
-    cokYakinda,
+    Campaigns,
   },
 }
 </script>
