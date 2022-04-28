@@ -24,11 +24,11 @@
                     tüm talep, öneri, görüş ve sorularınızı iletebilirsiniz.
                     <br /><br />
                     <b style="font-size: 16px"
-                      >Yes Oto Kiralama ve Turizm Yatırımları A.Ş.</b
+                      >Ck-Rent Oto Kiralama ve Turizm Yatırımları A.Ş.</b
                     >
                     <br /><br />
                     Adres: Avni Dilligil Sk. 1, Gülbahar, 34394 Şişli/İstanbul
-                    <br />Rüzgarlıbahçe – Beykoz/İstanbul Türkiye <br /><br />
+                    <br />
                     Tel: +90 212 222 22 22(PBX) <br /><br />
                     Faks:+90 212 222 22 22
                   </p>
